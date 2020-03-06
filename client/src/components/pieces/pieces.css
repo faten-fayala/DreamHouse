@@ -1,0 +1,42 @@
+
+.forme{
+   width: 40%;
+ 
+    
+}
+.fa-check-circle{
+    color: goldenrod;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.pieceitem:hover {
+    
+  box-shadow: 8px 19px 57px -19px rgba(110, 110, 110, 0.77);
+  border : 1px solid #c0b7a8;
+}
+.piecelist{background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.pieceitem{width: 214.33px;
+    height: 153px;
+    cursor: pointer;
+    align-items: center;
+    padding: 20px;
+    margin: 1px;
+align-self: center;
+    align-content: center;
+    background-color: #ffffff;
+    border : 2px solid white;
+display: flex;
+flex-direction: column;
+position: relative;
+ 
+}
+h3{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 22px;
+}

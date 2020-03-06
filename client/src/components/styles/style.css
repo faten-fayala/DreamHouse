@@ -1,0 +1,74 @@
+.textOnStyle{
+
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+background: #fff;
+padding: 10px 15px;
+font-size: 1.1428571428571428em;
+text-transform: uppercase;
+z-index: 3;
+text-align: center;
+display: inline-table;
+max-width: 85%;
+}
+.position{
+    position: relative;
+    cursor: pointer;
+   
+   
+}
+.checked{
+    color: goldenrod;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+    z-index: 9999999999;
+}
+.Image:hover {
+   opacity: 0.5;
+    box-shadow: 8px 19px 57px -19px rgba(110, 110, 110, 0.77);
+    border : 1px solid #c0b7a8;
+  }
+  .ImageChecked{
+    box-shadow: 8px 19px 57px -19px rgba(110, 110, 110, 0.77);
+    border : 2px solid gray;
+    
+    width: 293.33px;
+    height: 233px;
+    cursor: pointer;
+    align-items: center;
+    padding: 20px;
+    margin: 1px;
+    align-self: center;
+    align-content: center;
+    background-color: #ffffff;
+  }
+.Image{
+   
+    
+    width: 293.33px;
+    height: 233px;
+    cursor: pointer;
+    align-items: center;
+    padding: 20px;
+    margin: 1px;
+    align-self: center;
+    align-content: center;
+    background-color: #ffffff;
+    /* border : 2px solid white; */
+    
+}
+.styleList{
+    display: flex;
+
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    
+}
+
+

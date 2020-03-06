@@ -1,0 +1,60 @@
+
+.position{
+    position: relative;
+   
+   
+}
+
+.ColorImage:hover {
+   
+    box-shadow: 8px 19px 57px -19px rgba(110, 110, 110, 0.77);
+    border : 1px solid #c0b7a8;
+  }
+.ColorImage{
+   
+   
+    width: 273.33px;
+    height: 233px;
+    cursor: pointer;
+    align-items: center;
+    padding: 20px;
+    margin: 1px;
+    align-self: center;
+    align-content: center;
+    background-color: #ffffff;
+    border : 2px solid white;
+    
+}
+.colorList{align-items: center;
+
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+    padding: 10px;
+    
+}
+
+
+.checked{
+    color: goldenrod;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+    z-index: 9999999999;
+}
+
+  .ColorChecked{
+    box-shadow: 8px 19px 57px -19px rgba(110, 110, 110, 0.77);
+    border : 2px solid black;
+    width: 293.33px;
+    height: 233px;
+    cursor: pointer;
+    align-items: center;
+    padding: 20px;
+    margin: 1px;
+    align-self: center;
+    align-content: center;
+    background-color:white;
+  }
