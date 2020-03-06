@@ -17,6 +17,7 @@ if(localStorage.token){
 function App() {
   return (
     <div className="App">
+      <span>hi foufou</span>
       {/* <Navbar/> */}
       {/* <Architecte/> */}
       <Acceuil/>
