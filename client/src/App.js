@@ -18,6 +18,7 @@ function App() {
   return (
     <div className="App">
       <span>hi foufou</span>
+    <h1>hellooooooooooooooooooo</h1>
       {/* <Navbar/> */}
       {/* <Architecte/> */}
       <Acceuil/>
