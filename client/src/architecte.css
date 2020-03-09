@@ -1,8 +1,5 @@
 
-.architecte-items{
-  display: flex !important;
-align-items: center;
-}
+
 .carousel-architecte{
     width:368px !important;
     height:200px !important;
@@ -14,7 +11,7 @@ align-items: center;
 
   .architecte{
     display:flex;
-
+/* border-bottom: 1px solid #333333; */
     /* justify-content: space-around; */
     /* width:70%; */
     margin:20px;
@@ -45,10 +42,11 @@ align-items: center;
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color:#b3b3b2;
 }
-/* .items-contact{
+.items-contact{
     display: flex;
     justify-content: space-around;
-} */
+    width: 300px;
+}
 .contact-button{
     /* margin-left: 200px; */
     font-size: 16px;
@@ -68,6 +66,12 @@ align-items: center;
   background-color: #c39738;
   transition: all 0.8s
 }
+.architecte-description{
+  display: flex ;
+align-items: center;
+border: 2px solid goldenrod ;
+
+padding: 50px;}
 /* .contact-button:active{
   color:#ffffff;
   border-color:#c39738;

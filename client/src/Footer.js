@@ -26,6 +26,7 @@
 
 import React, { Component } from "react";
 import Image from "./dreamhouse.png";
+import Publicite from './Publicite';
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import "./footer.css";
@@ -47,10 +48,49 @@ class Footer extends Component {
         <img src={Image} className="img-footer" />
         </div>
         <div className="footer-description">
-        À PROPOS
+          <div className="footer-title">
+          À PROPOS
+          </div>
+      <div className="footer-description-items">
+        <span>Qui sommes-nous ?</span>
+      </div>
+      <div className="footer-description-items">
+      <Link to="/Fournisseurs">
+        <span className="footer-description-items">Nos Marques</span>
+        </Link>
+      </div>
+      <div className="footer-description-items">
+      <Link to="/ProductList">
+        <span>Nos Produits</span>
+        </Link>
+      </div>
+        
+        </div>
+        <div className="footer-description ligne">
+        
         </div>
         <div className="footer-description">
+        
+        <div className="footer-title-publicite">
+         <Link to="/Publicite">
         PUBLICITÉ
+        </Link>
+        </div>
+        <div className="footer-description-items">
+        <div className="footer-contacts">
+         <span className="service-client">SERVICE CLIENT</span> 
+         <span>(216) 40 149 044</span>
+         <span>Du lundi au vendredi</span>
+         <span>de 9h à 18h30</span>
+          </div>
+      </div>
+        </div>
+        <div className="footer-description ligne">
+        
+        </div>
+        <div className="footer-description">
+        {/* RESTONS CONNECTÉS */}
+        NOUS SUIVRE
         </div>
         <div>
       

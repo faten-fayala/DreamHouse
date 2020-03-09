@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import Creations from './Creations';
 import Fournisseurs from './Fournisseurs';
+import ProductList from './ProductList';
 import Acceuil from './Acceuil';
 import Style from './Style';
 import Cuisine from './Cuisine';
@@ -16,6 +17,8 @@ import SalleAManger from './SalleAManger';
 import Jardin from './Jardin';
 import Bureau from './Bureau';
 import store from './store';
+import Publicite from './Publicite';
+import Architecte from './architecte';
 
 
 // import Store from "./Store/Store";
@@ -39,17 +42,20 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Stepper from './components/Stepper'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Marque from './Marque';
+import Footer from './Footer';
 
 
 ReactDOM.render(
 <BrowserRouter>
 <Provider store={store}>
-    <Navbar />
+    {/* <Navbar /> */}
     <Switch>
         <Route exact path="/" component={App} />
         {/* <Route exact path="/test/:style" component={Style} /> */}
         <Route exact path="/Creations" component={Creations} />
         <Route exact path="/Fournisseurs" component={Fournisseurs} />
+        <Route exact path="/ProductList" component={ProductList} />
+        <Route exact path="/Architecte" component={Architecte} />
         <PrivateRoute exact path="/projectcreation" component={Stepper} />
         {/* <Route exact path="/Creations/:Name" component={Salledebain} /> */}
         <Route exact path="/Creations/Cuisine" component={Cuisine} />
@@ -72,7 +78,9 @@ ReactDOM.render(
         <Route exact path="/Creations/Bureau" component={Bureau} />
         <Route exact path="/Creations/salle a manger" component={SalleAManger} />
         <Route exact path="/Acceuil" component={Acceuil} />
+        <Route exact path="/Publicite" component={Publicite} />
     </Switch>
+    <Footer/>
 </Provider>
 </BrowserRouter> 
 , document.getElementById('root'));
