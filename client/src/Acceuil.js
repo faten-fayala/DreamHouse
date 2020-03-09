@@ -6,7 +6,7 @@ import Creations from "./Creations";
 // import { Link } from "react-router-dom";
 import Logo from "./Logo-DreamHouse.png";
 import { Redirect, Link } from "react-router-dom";
-
+import {loadUser} from './actions/AuthActions'
 class Acceuil extends Component {
   constructor(props) {
     super(props);
@@ -86,6 +86,10 @@ class Acceuil extends Component {
         }
       ]
     };
+  }
+
+  UNSAFE_componentWillMount(){
+    this.props.loadUser()
   }
   render() {
     return (
@@ -247,4 +251,4 @@ class Acceuil extends Component {
   }
 }
 
-export default Acceuil;
+export default connect(null,{loadUser})(Acceuil);

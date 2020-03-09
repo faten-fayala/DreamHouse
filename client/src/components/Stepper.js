@@ -131,7 +131,14 @@ class Stepp extends React.Component {
       //   }
       // }
       
-      send = () =>{
+      send = () =>{ if(this.state.piece ===''||this.state.gamme ===''||this.state.thespace ===''||this.state.inspiration ===''
+      ||this.state.actualpiece ===''||this.state.speceficdemand ===''||this.state.styledemanded ===''||this.state.color ===''){
+        let id=uuidv4()
+        this.props.setAlert('please all fields are required','warning',id)
+        setTimeout(() => {
+            this.props.removeAlert(id)
+        }, 5000);
+    }else 
         {this.props.createProject({piece:this.state.piece,
             styledemanded:this.state.styledemanded,
             speceficdemand:this.state.speceficdemand,
