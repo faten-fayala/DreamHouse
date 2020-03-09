@@ -2,7 +2,7 @@ import {ADD_DEMAND , DELETE_DEMAND, UPDATE_DEMAND,DEMAND_ERROR, GET_DEMAND} from
 
 const initialState={
     demand:[],
-    save:null,
+ 
     error:null
 }
 

@@ -2,15 +2,18 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {logout} from '../actions/AuthActions'
 import {connect} from 'react-redux'
+import Avatars from './Avatars'
 const Navbar = (props) => {
 
     const userConnected  =()=>{
         console.log(props)
+    //  let logo=props.auth.user.firstname.slice(0,1)+props.auth.user.lastname.slice(0,1)
         return(
             <ul className="row d-flex w-40">
                 <li className="col d-flex w-40">
+                <Avatars Name={'TB'} />
                     
-                    HELLO { props.auth.user && props.auth.user.firstname + ' ' + props.auth.user.lastname}
+                     { props.auth.user && props.auth.user.firstname + ' ' + props.auth.user.lastname}
 
                 </li>
                 

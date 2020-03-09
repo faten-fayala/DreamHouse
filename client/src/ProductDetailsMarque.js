@@ -4,7 +4,7 @@ import ProductItem from './ProductItem'
 import {getproduct} from './actions/ProductAction'
 import {  Link } from 'react-router-dom'
 
-export class ProductDetails extends Component {
+export class ProductDetailsMarque extends Component {
 
     componentDidMount(){
         this.props.getproduct()
@@ -14,17 +14,14 @@ export class ProductDetails extends Component {
         return (
             <div>
                 {this.props.products.filter(el=> el._id=== this.props.match.params.id).map(x=>
-               
-                <div className="product-details">
-      <img className="img-details" src={x.Name} />
-      <p className="marque-details">Marque: {x.Marque}</p>
-      <p className="marque-details"> {x.Categorie}</p>
-      <p className="marque-details">Style: {x.Style}</p>
-      <p className="price-details">{x.Price} DT</p>
-      </div>
-
-
-                 )}
+                
+                <div className="product-description">
+      <img className="img-product" src={x.Name} />
+      {/* <p className="marque-product">Marque: {x.Marque}</p> */}
+      <p className="marque-product"> {x.Categorie}</p>
+      {/* <p className="marque-product">Style: {x.Style}</p> */}
+      <p className="price-product">{x.Price} DT</p>
+      </div>   )}
             </div>
         )
     }
@@ -34,4 +31,4 @@ const mapStateToProps = state=>{
         products:state.ProductReducer.product
     }
 }
-export default connect(mapStateToProps,{getproduct})(ProductDetails)
+export default connect(mapStateToProps,{getproduct})(ProductDetailsMarque)
