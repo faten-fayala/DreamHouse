@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './style.css'
 import StyleItem from './StyleItem'
+import Alerts from '../pieces/Alerts';
 const styles=[{classe: 'moderne',
 imgURL: "https://st.hzcdn.com/simgs/7261dfa30d9364c0_8-6609/moderno-salon.jpg"},
 {classe: 'classique',
@@ -41,6 +42,7 @@ constructor(props) {
     render() {
         return (
             <div className="styleList">
+                <Alerts/>
                 {styles.map(el=><StyleItem 
                 styledemanded={this.props.styledemanded} 
                 handleStyle={x => this.props.handleStyle(x)}

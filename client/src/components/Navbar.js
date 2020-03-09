@@ -1,19 +1,20 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { logout } from "../actions/AuthActions";
-import { connect } from "react-redux";
-import Image from "../dreamhouse.png";
-const Navbar = props => {
-  const userConnected = () => {
-    console.log(props);
-    return (
-      <div>
-        <ul className="row d-flex w-40">
-          <li className="col d-flex w-40">
-            HELLO{" "}
-            {props.auth.user &&
-              props.auth.user.firstname + " " + props.auth.user.lastname}
-          </li>
+import React from 'react'
+import {Link} from 'react-router-dom'
+import {logout} from '../actions/AuthActions'
+import {connect} from 'react-redux'
+import Avatars from './Avatars'
+const Navbar = (props) => {
+
+    const userConnected  =()=>{
+        console.log(props)
+    //  let logo=props.auth.user.firstname.slice(0,1)+props.auth.user.lastname.slice(0,1)
+        return(
+            <ul className="row d-flex w-40">
+                <li className="col d-flex w-40">
+                <Avatars Name={'TB'} />
+                    
+                     { props.auth.user && props.auth.user.firstname + ' ' + props.auth.user.lastname}
+
 
           {/* <li className="col">
              <Link to="/" >HOME</Link>

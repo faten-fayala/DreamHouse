@@ -29,6 +29,8 @@ import Navbar from './components/Navbar'
 // import Home from './components/Home';
 import MesDemandes from './components/MesDemandes';
 import ProductDetails from './ProductDetails'
+import ProductDetailsMarque from './ProductDetailsMarque'
+
 import Login from './components/Login';
 import Register from './components/Register';
 import Alerts from './components/pieces/Alerts'
@@ -65,7 +67,8 @@ ReactDOM.render(
 
         <Route exact path='/style/:style' component={Style} />
         <Route exact path='/product/:marque' component={Marque} />
-        <Route exact path='/product/:id' component={ProductDetails} />
+        <Route exact path='/product/Style/:id' component={ProductDetails} />
+        <Route exact path='/product/Marque/:id' component={ProductDetailsMarque} />
 
         <Route exact path="/register" component={Register} />
         <Route exact path="/MesDemandes" component={MesDemandes} />
