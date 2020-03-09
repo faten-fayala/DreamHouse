@@ -6,6 +6,7 @@ import Fournisseurs from './Fournisseurs';
 import './App.css';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import Publicite from './Publicite';
  import ProductList from './ProductList';
  import setAuthToken from './utils/setAuthToken'
 
@@ -17,13 +18,16 @@ if(localStorage.token){
 function App() {
   return (
     <div className="App">
+
     
+
       {/* <Navbar/> */}
       {/* <Architecte/> */}
-      <Acceuil/>
-      <ProductList /> 
+       <Acceuil/>
+      {/* <ProductList />  */}
       {/* <Fournisseurs/> */}
       {/* <Footer/> */}
+      {/* <Publicite/> */}
     </div>
   );
 }

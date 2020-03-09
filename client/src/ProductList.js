@@ -13,7 +13,7 @@ class ProductList extends Component {
   render() {
     return (<div>
       <div  className="product_list_page">
-        <h1 className="title">Products</h1>
+        {/* <h1 className="title">Products</h1> */}
         <div className="products">
           {this.props.products.map(el => (
           <ProductItem product={el} />

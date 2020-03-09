@@ -94,20 +94,17 @@ class Acceuil extends Component {
   render() {
     return (
       <div>
-        
         <div>
           <div className="navbar">
-            <div className="title">
+            {/* <div className="title">
               <Link to="/Acceuil">
                 <img src={Image} className="img-dream-house" />
               </Link>
               
-            </div>
-            <div className="Header-menu">
-  
-            </div>
+            </div> */}
+            <div className="Header-menu"></div>
           </div>
-        </div> 
+        </div>
 
         <div
           id="carouselExampleControls"
@@ -129,13 +126,13 @@ class Acceuil extends Component {
                 alt="Second slide"
               />
             </div>
-            <div class="carousel-item">
+            {/* <div class="carousel-item">
               <img
                 class="d-block w-100"
                 src="https://cdn.shopify.com/s/files/1/0291/8242/7276/files/slideshow-1-1.jpg?v=1577691282"
                 alt="Third slide"
               />
-            </div>
+            </div> */}
             <div>
               <img src={Logo} className="Logo-dream-house" />
             </div>
@@ -184,8 +181,8 @@ class Acceuil extends Component {
             Offrez-vous les conseils d’un décorateur d’intérieur
           </span>
           <hr className="line" />
-          <Link to="/projectcreation" >
-          <button className="button-mon-projet">DÉMARRER MON PROJET</button>
+          <Link to="/projectcreation">
+            <button className="button-mon-projet">DÉMARRER MON PROJET</button>
           </Link>
         </div>
 
@@ -205,6 +202,76 @@ class Acceuil extends Component {
             </div>
           </div>
         </div>
+        <div className="our-team">
+          {/* <div className="title-our-team"> */}
+          <div className="title">
+            <img src={Image} className="img-dream-house-team" />
+          </div>
+          <div>
+            <span className="title-our-team">Notre équipe incroyable</span>
+          </div>
+          <div className="ligne-team"></div>
+
+          {/* </div> */}
+
+          <div className="img-team">
+            <div className="designer-description">
+              <img
+                className="img-team-designer"
+                src="https://all4home.qodeinteractive.com/wp-content/uploads/2017/02/h-1-team-img-1.jpg"
+              />
+              <div class="designer">
+                <div class="designer-name">
+                <h5 class="designer-nom"> ZIED AMOURI </h5>
+                  <h6 class="designer-position">Architecte</h6>
+                </div>
+              </div>
+            </div>
+
+            <div className="designer-description">
+              <img
+                className="img-team-designer"
+                src="https://all4home.qodeinteractive.com/wp-content/uploads/2017/02/h-1-team-img-2.jpg"
+              />
+              <div class="designer">
+                <div class="designer-name">
+                  <h5 class="designer-nom">FATEN AYADI</h5>
+                  <h6 class="designer-position">Architecte</h6>
+                </div>
+              </div>
+            </div>
+
+            <div className="designer-description">
+              <img
+                className="img-team-designer"
+                src="https://all4home.qodeinteractive.com/wp-content/uploads/2017/02/h-1-team-img-3.jpg"
+              />
+              <div class="designer">
+                <div class="designer-name">
+                <h5 class="designer-nom"> AROUA BEN ABBES</h5>
+                  <h6 class="designer-position">Architecte</h6>
+                </div>
+              </div>
+            </div>
+            <div className="designer-description">
+              <img
+                className="img-team-designer"
+                src="https://all4home.qodeinteractive.com/wp-content/uploads/2017/02/h-1-team-img-4.jpg"
+              />
+              <div class="designer">
+                <div class="designer-name">
+                <h5 class="designer-nom">ROCK RAVEN</h5>
+                  <h6 class="designer-position">Photographe</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img
+            width="511"
+            height="133"
+            src="https://all4home.qodeinteractive.com/wp-content/uploads/2017/02/h-1-img-5.jpg"
+          />
+        </div>
         <div className="choisissez-votre-style wrappers">
           <h2 className="title-choisissez-votre-style">
             <p>
@@ -215,18 +282,31 @@ class Acceuil extends Component {
           </h2>
           <div className="scroll_to_top">
             <a href="#top">
-             
-              <svg className="img-scroll-top" version="1.1" id="IconsRepoEditor" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" viewBox="0 0 346.078 346.078" stroke="#000000" stroke-width="0"><g id="IconsRepo_bgCarrier"></g> <path  d="M0,173.111C0,77.695,77.629,0.072,173.039,0.072c95.416,0,173.039,77.623,173.039,173.039 c0,93.405-74.407,169.722-167.06,172.89l0.376-193.565l33.588,33.588l8.437-8.437l-47.962-47.962l-48.797,48.797l8.437,8.437 l34.369-34.363l-0.382,193.512C74.425,342.844,0,266.528,0,173.111z"></path> </svg>
-              </a>
+              <svg
+                className="img-scroll-top"
+                version="1.1"
+                id="IconsRepoEditor"
+                xmlns="http://www.w3.org/2000/svg"
+                x="0px"
+                y="0px"
+                viewBox="0 0 346.078 346.078"
+                stroke="#000000"
+                stroke-width="0"
+              >
+                <g id="IconsRepo_bgCarrier"></g>{" "}
+                <path d="M0,173.111C0,77.695,77.629,0.072,173.039,0.072c95.416,0,173.039,77.623,173.039,173.039 c0,93.405-74.407,169.722-167.06,172.89l0.376-193.565l33.588,33.588l8.437-8.437l-47.962-47.962l-48.797,48.797l8.437,8.437 l34.369-34.363l-0.382,193.512C74.425,342.844,0,266.528,0,173.111z"></path>{" "}
+              </svg>
+            </a>
           </div>
-          {this.state.imgs.map(el =>  <Link to={`/style/${el.classe}`}  >
-            <div>
-            <img className =  {`style ${el.classe}`} src={el.imgURL}/>
-   
-    {/* <span className={`${el.classe} texton`} >{el.classe}</span> */}
+          {this.state.imgs.map(el => (
+            <Link to={`/style/${el.classe}`}>
+              <div>
+                <img className={`style ${el.classe}`} src={el.imgURL} />
 
-   </div>
-          </Link>)}
+                {/* <span className={`${el.classe} texton`} >{el.classe}</span> */}
+              </div>
+            </Link>
+          ))}
           {/* {this.state.imgs.map(el =>  <img 
           //   onLoad={e => e.target.className = `style ${el.classe}`}
           //   onClick={(e) => {this.setState({
@@ -245,7 +325,6 @@ class Acceuil extends Component {
           )
         } */}
         </div>
-      
       </div>
     );
   }
