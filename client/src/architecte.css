@@ -29,8 +29,11 @@
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
  .list-architecte{
-  margin:auto;
-  width:80%;
+  /* margin:auto;
+  width:80%; */
+  padding-top:150px;
+  padding-left: 100px;
+  background-color: #f4f4f4;
 }   
 .architecte-contact{
     margin-left: 50px;

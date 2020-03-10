@@ -51,14 +51,7 @@ class Creations extends Component {
   render() {
     return (
         <div>
-            <div className="navbar">
-            <div className="title">
-              <Link to='/Acceuil'>
-              <img src={Image} className="img-dream-house" />
-              </Link>
-             
-            </div>
-          </div>
+            
       <div className="creations-piece">
      
         {this.state.Piece.map(el => (

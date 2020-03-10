@@ -12,10 +12,10 @@ class Style extends React.Component{
         <div className="products">
             
             {this.props.products.filter(el=> el.Style.toLowerCase().includes(this.props.match.params.style.toLowerCase().trim())).map(x=>  
-            
+            <div className="product-description">
                 <Link to={`/product/Style/${x._id}`}>
-                <div className="product-description">
-      <img className="img-product" src={x.Name} />
+                
+      <img className="img-product" src={x.Name} /></Link>
       {/* <p className="marque-product">Marque: {x.Marque}</p> */}
       <p className="marque-product"> {x.Categorie}</p>
       {/* <p className="marque-product">Style: {x.Style}</p> */}
@@ -23,7 +23,7 @@ class Style extends React.Component{
       </div>
 
 
-                </Link> )}
+                 )}
                 
         </div>
     ) }}

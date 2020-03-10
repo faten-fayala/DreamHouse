@@ -47,7 +47,7 @@
 
   .ColorChecked{
     box-shadow: 8px 19px 57px -19px rgba(110, 110, 110, 0.77);
-    border : 2px solid black;
+    border : 2px solid #c39738;
     width: 293.33px;
     height: 233px;
     cursor: pointer;

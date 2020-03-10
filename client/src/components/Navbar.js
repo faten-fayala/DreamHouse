@@ -1,54 +1,84 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React, { Children } from 'react';
+import Image from '../dreamhouse.png'
+import {Link , withRouter} from 'react-router-dom'
 import {logout} from '../actions/AuthActions'
 import {connect} from 'react-redux'
 import Avatars from './Avatars'
-const Navbar = (props) => {
+import NavbarDrawer from './NavbarDrawer'
+class Navbar extends React.Component {
+constructor(props){
+  super(props)
+  this.state={
+    
+  }
+}
+     
+componentWillReceiveProps(nextProps) {
+  this.setState({username: nextProps.auth.user})
+}
+  
+  componentDidMount() {
+            window.addEventListener('scroll', ()=>{
+                const isTop = window.scrollY < 100
+                if(isTop !== true){
+                    this.setState({scrolled: true})
+                }else{
+                    this.setState({scrolled: false})
+                }
+            })
+        }
+  render(){
+    console.log(this.props.location.pathname)
+    const Guest = () => {
+      return (
+        <ul className="row d-flex w-25">
+          <li className="col login">
+            <Link to="/login">Login </Link>
+          </li>
+          <li className="col">
+            <Link to="/register">Register </Link>
+          </li>
+        </ul>
+      );
+    };
+    
 
     const userConnected  =()=>{
-        console.log(props)
-    //  let logo=props.auth.user.firstname.slice(0,1)+props.auth.user.lastname.slice(0,1)
-        return(
-            <ul className="row d-flex w-40">
-                <li className="col d-flex w-40">
-                <Avatars Name={'TB'} />
-                    
-                     { props.auth.user && props.auth.user.firstname + ' ' + props.auth.user.lastname}
+      //  let logo=this.state.username.firstname.slice(0,1)+this.state.username.lastname.slice(0,1)
+          return(
+            <div>
+              <ul className="row d-flex w-40">
+                  {/* <li className="col d-flex w-40">
+                  <Avatars Name={this.props.auth.user && this.state.username.firstname.slice(0,1).toUpperCase()+this.state.username.lastname.slice(0,1).toUpperCase()} />
+                      
+                       { this.props.auth.user && this.props.auth.user.firstname + ' ' + this.props.auth.user.lastname}
+  </li> */}
+  
+            {/* <li className="col">
+               <Link to="/" >HOME</Link>
+               </li> */}
+            {/* <li className="col">
+              <Link to="/projectcreation">Project</Link>
+            </li>
+            <li className="col">
+              <Link to="/MesDemandes">Mes Demandes </Link>
+            </li>
+            <Link onClick={this.props.logout} href="#!">
+              <i className="fas fa-sign-out-alt"></i>
+              LOGOUT
+            </Link> */}
+            <Link onClick={this.props.logout} href="#!">
+              <i className="fas fa-sign-out-alt"></i>
+              LOGOUT
+            </Link>
+            <NavbarDrawer auth={this.props.auth}  />
+          </ul>
+        </div>
+      );
+    };
 
-
-          {/* <li className="col">
-             <Link to="/" >HOME</Link>
-             </li> */}
-          <li className="col">
-            <Link to="/projectcreation">Project</Link>
-          </li>
-          <li className="col">
-            <Link to="/MesDemandes">Mes Demandes </Link>
-          </li>
-          <a onClick={props.logout} href="#!">
-            <i className="fas fa-sign-out-alt"></i>
-            LOGOUT
-          </a>
-        </ul>
-      </div>
-    );
-  };
-
-  const Guest = () => {
     return (
-      <ul className="row d-flex w-25">
-        <li className="col login">
-          <Link to="/login">Login </Link>
-        </li>
-        <li className="col">
-          <Link to="/register">Register </Link>
-        </li>
-      </ul>
-    );
-  };
-
-  return (
-    <div className="navbar-dreamhouse">
+    <div className={(this.props.location.pathname === "/register" || this.props.location.pathname === "/login") ? "hidden" : this.state.scrolled? "navbar-dreamhouse-scrolled": "navbar-dreamhouse"}>
       <div className="navbar-left">
         <div className="title">
           <Link to="/">
@@ -60,36 +90,36 @@ const Navbar = (props) => {
           <div class="dropdown-content ">
             <div className="inspiration">
               <div>
-              <Link to={`/Creations/cuisine`}>
-                <span>Cuisine</span>
+              <Link className="dropdownlink" href={`/Creations/cuisine`}>
+                <span >Cuisine</span>
                 </Link>
-                <Link to={`/Creation/salon`}>
-                <span>Salon</span>
+                <Link className="dropdownlink" href={`/Creation/salon`}>
+                <span >Salon</span>
                 </Link>
-                <Link to={`/Creations/salle de bains`}>
-                <span>Salle de bains</span>
-                </Link>
-              </div>
-              <div>
-              <Link to={`/Creations/chambre`}>
-                <span>Chambre</span>
-                </Link>
-                <Link to={`/Creations/entrée`}>
-                <span>Entrée</span>
-                </Link>
-                <Link to={`/Creations/chambre enfant`}>
-                <span>Chambre enfant</span>
+                <Link className="dropdownlink"   href={`/Creations/salle de bains`}>
+                <span >Salle de bains</span>
                 </Link>
               </div>
               <div>
-              <Link to={`/Creations/jardin`}>
-                <span>Jardin</span>
+              <Link className="dropdownlink" href={`/Creations/chambre`}>
+                <span >Chambre</span>
                 </Link>
-                <Link to={`/Creations/salle a manger`}>
-                <span>Salle à manger</span>
+                <Link className="dropdownlink" href={`/Creations/entrée`}>
+                <span >Entrée</span>
                 </Link>
-                <Link to={`/Creations/Bureau`}>
-                <span>Bureau</span>
+                <Link className="dropdownlink" href={`/Creations/chambre enfant`}>
+                <span >Chambre enfant</span>
+                </Link>
+              </div>
+              <div>
+              <Link className="dropdownlink" href={`/Creations/jardin`}>
+                <span >Jardin</span>
+                </Link>
+                <Link className="dropdownlink" href={`/Creations/salle a manger`}>
+                <span >Salle à manger</span>
+                </Link>
+                <Link className="dropdownlink" href={`/Creations/Bureau`}>
+                <span >Bureau</span>
                 </Link>
               </div>
             </div>
@@ -100,7 +130,7 @@ const Navbar = (props) => {
         <div className="pros">
           <div className="pros-navbar">TROUVER DES PROS</div>
           <div class="dropdown-content pros">
-          <Link to={`/Architecte`}>
+          <Link className="dropdownlink" href={`/Architecte`}>
             <span>Architectes d'intérieur</span>
             </Link>
             <span>Paysagistes</span>
@@ -111,8 +141,8 @@ const Navbar = (props) => {
         </div>
 
         <span className="ligne-item" />
-        <Link to="/ProductList">
-        <div className="produits-navbar">PRODUITS</div>
+        <Link className="dropdownlink" href="/ProductList">
+        <div className="produits-navbar dropdownlink">PRODUITS</div>
         </Link>
         <span className="ligne-item" />
         {/* <Link to="/Fournisseurs"> */}
@@ -120,19 +150,19 @@ const Navbar = (props) => {
         <div className="marques">
         <div className="produits-navbar">MARQUES</div>
         <div class="dropdown-content pros">
-          <Link to={`/product/meublatex`}>
+          <Link className="dropdownlink" href={`/product/meublatex`}>
             <span>Meublatex</span>
             </Link>
-            <Link to={`/product/El Mezghani`}>
+            <Link className="dropdownlink" href={`/product/El Mezghani`}>
             <span>Mezghani</span>
             </Link>
-            <Link to={`/product/Zen Home`}>
+            <Link className="dropdownlink" href={`/product/Zen Home`}>
             <span>Zen Home</span></Link>
-            <Link to={`/product/Polysiége`}>
+            <Link className="dropdownlink" href={`/product/Polysiége`}>
             <span>Polysiége</span></Link>
-            <Link to={`/product/Conforta`}>
+            <Link className="dropdownlink" href={`/product/Conforta`}>
             <span>Conforta</span></Link>
-            <Link to={`/product/Sotufab`}>
+            <Link className="dropdownlink" href={`/product/Sotufab`}>
             <span>Sotufab</span></Link>
           </div>
         </div>
@@ -145,14 +175,14 @@ const Navbar = (props) => {
       </div>
       {localStorage.token ? userConnected() : Guest()}
     </div>
-  );
+  );}
 };
 const mapStateToProps = state => {
   return {
     auth: state.auth
   };
 };
-export default connect(mapStateToProps, { logout })(Navbar);
+export default connect(mapStateToProps, { logout })(withRouter(Navbar));
 
 // class Navbar extends Component {
 //     constructor(props) {

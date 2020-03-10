@@ -12,12 +12,16 @@
     font-weight: 400;
     font-weight: bold;
 }
+.footerlink{
+    text-decoration: none !important;
+    color: white;
+  }
 .footer-description-items{
     font-weight: 400;
     padding-top: 10px; 
-    color:white;
+    color:white !important;
     text-align: left;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 .footer-title{
     padding-bottom: 10px;
