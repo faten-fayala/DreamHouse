@@ -10,17 +10,18 @@ export class Marque extends Component {
 
     render() {
         return (
-            <div>
+            <div className="products">
                 {this.props.products.filter(el=> el.Marque.toLowerCase().includes(this.props.match.params.marque.toLowerCase().trim())).map(x=> 
                 <div>
-                <Link to={`/product/Marque/${x._id}`}>
+                
                 <div className="product-description">
-      <img className="img-product" src={x.Name} />
+                <Link to={`/product/Marque/${x._id}`}>
+      <img className="img-product" src={x.Name} /></Link>
       {/* <p className="marque-product">Marque: {x.Marque}</p> */}
       <p className="marque-product"> {x.Categorie}</p>
       {/* <p className="marque-product">Style: {x.Style}</p> */}
       <p className="price-product">{x.Price} DT</p>
-      </div></Link>
+      </div>
                 </div>
                 )}
             </div>

@@ -45,12 +45,17 @@ import Stepper from './components/Stepper'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Marque from './Marque';
 import Footer from './Footer';
+import NavbarDrawer from './components/NavbarDrawer';
 
 
 ReactDOM.render(
 <BrowserRouter>
 <Provider store={store}>
-    {/* <Navbar /> */}
+
+
+    <Navbar />
+
+
     <Switch>
         <Route exact path="/" component={App} />
         {/* <Route exact path="/test/:style" component={Style} /> */}
@@ -80,10 +85,10 @@ ReactDOM.render(
         <Route exact path="/Creations/jardin" component={Jardin} />
         <Route exact path="/Creations/Bureau" component={Bureau} />
         <Route exact path="/Creations/salle a manger" component={SalleAManger} />
-        <Route exact path="/Acceuil" component={Acceuil} />
+        {/* <Route exact path="/Acceuil" component={Acceuil} /> */}
         <Route exact path="/Publicite" component={Publicite} />
     </Switch>
-    <Footer/>
+    {/* <Footer/> */}
 </Provider>
 </BrowserRouter> 
 , document.getElementById('root'));

@@ -6,13 +6,13 @@ import Creations from "./Creations";
 // import { Link } from "react-router-dom";
 import Logo from "./Logo-DreamHouse.png";
 import { Redirect, Link } from "react-router-dom";
-import {loadUser} from './actions/AuthActions'
+import { loadUser } from "./actions/AuthActions";
 class Acceuil extends Component {
   constructor(props) {
     super(props);
     this.state = {
       imgs: [
-        {
+        {text:"un",
           classe: "moderne",
           imgURL:
             "https://st.hzcdn.com/simgs/7261dfa30d9364c0_8-6609/moderno-salon.jpg",
@@ -88,23 +88,23 @@ class Acceuil extends Component {
     };
   }
 
-  UNSAFE_componentWillMount(){
-    this.props.loadUser()
+  UNSAFE_componentWillMount() {
+    this.props.loadUser();
   }
   render() {
     return (
       <div>
-        <div>
+        {/* <div>
           <div className="navbar">
-            {/* <div className="title">
+            <div className="title">
               <Link to="/Acceuil">
                 <img src={Image} className="img-dream-house" />
               </Link>
               
-            </div> */}
+            </div> 
             <div className="Header-menu"></div>
           </div>
-        </div>
+        </div> */}
 
         <div
           id="carouselExampleControls"
@@ -188,90 +188,21 @@ class Acceuil extends Component {
 
         <div className="nos-travaux">
           <div className="border">
-            <div className="nos-creations">
-              <Link to="/Creations">
+            <Link to="/Creations">
+              <div className="nos-creations">
                 <span className="title-nos-travaux">NOS CREATIONS</span>
-              </Link>
-            </div>
+              </div>
+            </Link>
           </div>
           <div className="border">
-            <div className="nos-marques">
-              <Link to="/Fournisseurs">
+            <Link to="/Fournisseurs">
+              <div className="nos-marques">
                 <span className="title-nos-travaux">NOS MARQUES</span>
-              </Link>
-            </div>
+              </div>
+            </Link>
           </div>
         </div>
-        <div className="our-team">
-          {/* <div className="title-our-team"> */}
-          <div className="title">
-            <img src={Image} className="img-dream-house-team" />
-          </div>
-          <div>
-            <span className="title-our-team">Notre équipe incroyable</span>
-          </div>
-          <div className="ligne-team"></div>
-
-          {/* </div> */}
-
-          <div className="img-team">
-            <div className="designer-description">
-              <img
-                className="img-team-designer"
-                src="https://all4home.qodeinteractive.com/wp-content/uploads/2017/02/h-1-team-img-1.jpg"
-              />
-              <div class="designer">
-                <div class="designer-name">
-                <h5 class="designer-nom"> ZIED AMOURI </h5>
-                  <h6 class="designer-position">Architecte</h6>
-                </div>
-              </div>
-            </div>
-
-            <div className="designer-description">
-              <img
-                className="img-team-designer"
-                src="https://all4home.qodeinteractive.com/wp-content/uploads/2017/02/h-1-team-img-2.jpg"
-              />
-              <div class="designer">
-                <div class="designer-name">
-                  <h5 class="designer-nom">FATEN AYADI</h5>
-                  <h6 class="designer-position">Architecte</h6>
-                </div>
-              </div>
-            </div>
-
-            <div className="designer-description">
-              <img
-                className="img-team-designer"
-                src="https://all4home.qodeinteractive.com/wp-content/uploads/2017/02/h-1-team-img-3.jpg"
-              />
-              <div class="designer">
-                <div class="designer-name">
-                <h5 class="designer-nom"> AROUA BEN ABBES</h5>
-                  <h6 class="designer-position">Architecte</h6>
-                </div>
-              </div>
-            </div>
-            <div className="designer-description">
-              <img
-                className="img-team-designer"
-                src="https://all4home.qodeinteractive.com/wp-content/uploads/2017/02/h-1-team-img-4.jpg"
-              />
-              <div class="designer">
-                <div class="designer-name">
-                <h5 class="designer-nom">ROCK RAVEN</h5>
-                  <h6 class="designer-position">Photographe</h6>
-                </div>
-              </div>
-            </div>
-          </div>
-          <img
-            width="511"
-            height="133"
-            src="https://all4home.qodeinteractive.com/wp-content/uploads/2017/02/h-1-img-5.jpg"
-          />
-        </div>
+       
         <div className="choisissez-votre-style wrappers">
           <h2 className="title-choisissez-votre-style">
             <p>
@@ -300,13 +231,16 @@ class Acceuil extends Component {
           </div>
           {this.state.imgs.map(el => (
             <Link to={`/style/${el.classe}`}>
-              <div>
-                <img className={`style ${el.classe}`} src={el.imgURL} />
-
-                {/* <span className={`${el.classe} texton`} >{el.classe}</span> */}
+              <div className={`style ${el.classe}`} >
+                {/* <img className={`style ${el.classe}`} src={el.imgURL} /> */}
+                {/* className={${el.classe} texton`} */}
+                <span  >{el.classe}</span>
               </div>
             </Link>
           ))}
+          {/* <div className="test-hepta">
+            <span>MOEZ</span> */}
+          {/* </div> */}
           {/* {this.state.imgs.map(el =>  <img 
           //   onLoad={e => e.target.className = `style ${el.classe}`}
           //   onClick={(e) => {this.setState({
@@ -325,9 +259,81 @@ class Acceuil extends Component {
           )
         } */}
         </div>
+        <div className="our-team">
+          {/* <div className="title-our-team"> */}
+          <div className="title">
+            <img src={Image} className="img-dream-house-team" />
+          </div>
+          <div>
+            <span className="title-our-team">Notre équipe incroyable</span>
+          </div>
+          <div className="ligne-team"></div>
+
+          {/* </div> */}
+
+          <div className="img-team">
+            <div className="designer-description">
+              <img
+                className="img-team-designer"
+                src="https://all4home.qodeinteractive.com/wp-content/uploads/2017/02/h-1-team-img-1.jpg"
+              />
+              <div class="designer">
+                <div class="designer-name">
+                  <h5 class="designer-nom"> ZIED AMOURI </h5>
+                  <h6 class="designer-position">Architecte</h6>
+                </div>
+              </div>
+            </div>
+
+            <div className="designer-description">
+              <img
+                className="img-team-designer"
+                src="https://all4home.qodeinteractive.com/wp-content/uploads/2017/02/h-1-team-img-2.jpg"
+              />
+              <div class="designer">
+                <div class="designer-name">
+                  <h5 class="designer-nom">FATEN AYADI</h5>
+                  <h6 class="designer-position">Architecte</h6>
+                </div>
+              </div>
+            </div>
+
+            <div className="designer-description">
+              <img
+                className="img-team-designer"
+                src="https://all4home.qodeinteractive.com/wp-content/uploads/2017/02/h-1-team-img-3.jpg"
+              />
+              <div class="designer">
+                <div class="designer-name">
+                  <h5 class="designer-nom"> AROUA BEN ABBES</h5>
+                  <h6 class="designer-position">Architecte</h6>
+                </div>
+              </div>
+            </div>
+            <div className="designer-description">
+              <img
+                className="img-team-designer"
+                src="https://all4home.qodeinteractive.com/wp-content/uploads/2017/02/h-1-team-img-4.jpg"
+              />
+              <div class="designer">
+                <div class="designer-name">
+                  <h5 class="designer-nom">HAMED AFFEN</h5>
+                  <h6 class="designer-position">Photographe</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img
+            width="511"
+            height="133"
+            src="https://all4home.qodeinteractive.com/wp-content/uploads/2017/02/h-1-img-5.jpg"
+          />
+        </div>
       </div>
+    
+    
     );
   }
 }
 
-export default connect(null,{loadUser})(Acceuil);
+export default connect(null, { loadUser })(Acceuil);

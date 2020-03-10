@@ -48,7 +48,7 @@
 
 
 
-.MuiStepIcon-root .MuiSvgIcon-root  {
+/* .MuiStepIcon-root .MuiSvgIcon-root  {
   color:goldenrod !important;
  
 }
@@ -58,7 +58,7 @@
 
 circle{
   color: goldenrod;
-}
+} */
 /* svg{
   color: goldenrod !important;
 } */
@@ -70,7 +70,7 @@ width:100%
 
 } */
 .confirmation{ 
-  background-color: black;
+  background-color: #c39738 ;
   color:white;
   display:flex;
   align-items: center;
@@ -83,6 +83,35 @@ width:100%
    font-weight: 800;
  
  
+}
+
+#faten{
+  color:red !important;
+  background-color: salmon !important;
+}
+
+
+
+.MuiFormLabel-filled{
+  color: #c39738  !important;
+
+}
+.MuiOutlinedInput-input{
+  color: #333333 !important;
+
+}
+.MuiFormLabel-root{
+  color: #333333 !important;
+}
+.hidden{
+  display: none;
+}
+.MuiAvatar-colorDefault{ 
+  background-color: #c39738 !important
+  ; color:white  !important
+}
+.moez{
+  padding-top: 100px;
 }
 .displayDemand{
   display:flex;
@@ -99,4 +128,32 @@ width:100%
   z-index: 99999;
   width:400px;
   height:400px;
+}
+
+#back{
+  color: #c39738 !important
+;border: 1px solid #c39738 ;
+font-weight: bold;
+outline: none !important;
+}
+#next{
+  color: white !important
+;background-color: #c39738;
+outline: none !important;
+font-weight: bold;
+}
+.MuiStepButton-touchRipple	{
+  color: red !important
+
+}
+
+.MuiStepIcon-active {
+  color: #333333 !important
+}
+.MuiStepIcon-completed{
+  
+  fill:#c39738 !important;
+}
+.MuiStepIcon-completed .MuiStepIcon-active{
+  color:red !important;
 }

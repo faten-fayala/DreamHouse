@@ -158,6 +158,7 @@ class Stepp extends React.Component {
     const { activeStep } = this.state;
 
     return (
+      <div id="paddingTop">
       <Container>
       <div className={classes.root}>
         
@@ -178,7 +179,7 @@ class Stepp extends React.Component {
             <div>
               <Typography className={classes.instructions}>{this.getStepContent()}</Typography>
               <div className={classes.MarginBoutton}>
-                <Button
+                <Button id="back"
                   disabled={activeStep === 0}
                   onClick={this.handleBack}
                   className={classes.backButton}
@@ -195,6 +196,7 @@ class Stepp extends React.Component {
         </div>
       </div>
       </Container>
+      </div>
     );
   }
 }

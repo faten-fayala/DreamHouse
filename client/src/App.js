@@ -9,7 +9,7 @@ import Footer from './Footer';
 import Publicite from './Publicite';
  import ProductList from './ProductList';
  import setAuthToken from './utils/setAuthToken'
-
+import Login from './components/loginn';
 // SET THE TOKEN INSIDE THE REQUEST'S HEADER
 if(localStorage.token){
   setAuthToken(localStorage.token)
@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
 
-    
+    {/* <Login/> */}
 
       {/* <Navbar/> */}
       {/* <Architecte/> */}

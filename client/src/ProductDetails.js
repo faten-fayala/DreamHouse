@@ -1,37 +1,58 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import ProductItem from './ProductItem'
-import {getproduct} from './actions/ProductAction'
-import {  Link } from 'react-router-dom'
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import ProductItem from "./ProductItem";
+import { getproduct } from "./actions/ProductAction";
+import { Link } from "react-router-dom";
 
 export class ProductDetails extends Component {
+  componentDidMount() {
+    this.props.getproduct();
+  }
 
-    componentDidMount(){
-        this.props.getproduct()
-    }
+  render() {
+    return (
+      <div>
+        {this.props.products
+          .filter(el => el._id === this.props.match.params.id)
+          .map(x => (
+            <div className="product-details">
+              <div>
+                <img className="img-details" src={x.Name} />
+              </div>
 
-    render() {
-        return (
-            <div>
-                {this.props.products.filter(el=> el._id=== this.props.match.params.id).map(x=>
-               
-                <div className="product-details">
-      <img className="img-details" src={x.Name} />
-      <p className="marque-details">Marque: {x.Marque}</p>
-      <p className="marque-details"> {x.Categorie}</p>
-      <p className="marque-details">Style: {x.Style}</p>
-      <p className="price-details">{x.Price} DT</p>
-      </div>
+              
+              <div className="product-descri">
+              <p className="categorie-details"> {x.Categorie}</p>
+                  <table>
+                
+                <tr>
+                  <td className="style-details">Fournisseur</td>
+                  <td>{x.Marque}</td>
+                </tr>
+                <tr>
+                  <td className="style-details">Style</td>
+                  <td>{x.Style}</td>
+                </tr>
+                <tr>
+                  <td className="style-details">Prix</td>
+                  <td>{x.Price} DT</td>
+                </tr>
+              </table>
+                {/* <p className="categorie-details"> {x.Categorie}</p>
+                <p className="marque-details">Vendu par: {x.Marque}</p>
 
-
-                 )}
+                <p className="style-details">Style: {x.Style}</p>
+                <p className="price-details">Prix: {x.Price} DT</p> */}
+              </div>
             </div>
-        )
-    }
+          ))}
+      </div>
+    );
+  }
 }
-const mapStateToProps = state=>{
-    return{
-        products:state.ProductReducer.product
-    }
-}
-export default connect(mapStateToProps,{getproduct})(ProductDetails)
+const mapStateToProps = state => {
+  return {
+    products: state.ProductReducer.product
+  };
+};
+export default connect(mapStateToProps, { getproduct })(ProductDetails);

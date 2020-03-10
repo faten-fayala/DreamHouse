@@ -45,7 +45,7 @@ class Footer extends Component {
       <div className="footer">
         <div className="footer-items">
         <div className="footer-logo" >
-        <img src={Image} className="img-footer" />
+       <a href="/" ><img src={Image} className="img-footer" /></a>
         </div>
         <div className="footer-description">
           <div className="footer-title">
@@ -55,14 +55,14 @@ class Footer extends Component {
         <span>Qui sommes-nous ?</span>
       </div>
       <div className="footer-description-items">
-      <Link to="/Fournisseurs">
+      <a className="footerlink" href="/Fournisseurs">
         <span className="footer-description-items">Nos Marques</span>
-        </Link>
+        </a>
       </div>
       <div className="footer-description-items">
-      <Link to="/ProductList">
-        <span>Nos Produits</span>
-        </Link>
+      <a className="footerlink" href="/ProductList">
+      <span className="footer-description-items">Nos Produits</span>
+        </a>
       </div>
         
         </div>
@@ -72,14 +72,14 @@ class Footer extends Component {
         <div className="footer-description">
         
         <div className="footer-title-publicite">
-         <Link to="/Publicite">
-        PUBLICITÉ
-        </Link>
+         <a className="footerlink" href="/Publicite">
+         <span className="footer-description-items">Publicité</span>
+        </a>
         </div>
         <div className="footer-description-items">
         <div className="footer-contacts">
          <span className="service-client">SERVICE CLIENT</span> 
-         <span>(216) 40 149 044</span>
+         <span>(+216) 40 149 044</span>
          <span>Du lundi au vendredi</span>
          <span>de 9h à 18h30</span>
           </div>

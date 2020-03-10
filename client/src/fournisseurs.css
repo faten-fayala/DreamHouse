@@ -34,8 +34,12 @@
     color: #222;
   }
   .our-fournisseur{
-    margin:auto;
-    width:70%;
+    padding-top: 120px;
+   background-color: #f4f4f4;
+   padding-left: 300px;
+   padding-right: 300px;
+   padding-bottom: 100px;
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

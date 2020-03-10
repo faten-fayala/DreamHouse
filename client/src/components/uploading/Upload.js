@@ -58,7 +58,7 @@ actualpiece:""
         <TextField  
           
           onChange={this.props.handleChange('actualpiece')}
-          id="outlined-full-width"
+          id="outlined-full-width faten"
           label="A quoi ressemble la piéce aujourd'hui"
           style={{ margin: 8 }}
           placeholder="http://example.com"
