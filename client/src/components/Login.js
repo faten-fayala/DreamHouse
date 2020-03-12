@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {login,clearError } from '../actions/AuthActions'
 import {setAlert,removeAlert} from '../actions/AlertActions'
 import { v4 as uuidv4 } from 'uuid';
+import Alerts from './pieces/Alerts'
 import {Link} from 'react-router-dom';
 
 export class Login extends Component {
@@ -128,6 +129,7 @@ export class Login extends Component {
                   <span>Retour à l'accueil</span>
                 </div>
                 </a>
+               
                 <div>
                   <span>Vous n'avez pas encore de compte ?</span>
                   {/* <span className="text-inscri">C'est votre première visite ?
@@ -152,6 +154,7 @@ export class Login extends Component {
               />
               <button onClick={this.loginNow}  className="button-connexion">SE CONNECTER</button>
             </div>
+            <Alerts/>
           </div>
 
 

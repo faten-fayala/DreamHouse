@@ -5,8 +5,8 @@ const { check, validationResult } = require("express-validator");
 const router = express.Router();
 const Demand = require("../models/Demand");
 
-// private route
-// Get demande
+// public route
+// Get demande admin
 router.get("/", (req, res) => {
   Demand.find()
     .then(demande => res.json(demande))

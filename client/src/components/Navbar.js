@@ -35,9 +35,9 @@ componentWillReceiveProps(nextProps) {
           <li className="col login">
             <Link to="/login">Login </Link>
           </li>
-          <li className="col">
+          {/* <li className="col">
             <Link to="/register">Register </Link>
-          </li>
+          </li> */}
         </ul>
       );
     };
@@ -47,7 +47,7 @@ componentWillReceiveProps(nextProps) {
       //  let logo=this.state.username.firstname.slice(0,1)+this.state.username.lastname.slice(0,1)
           return(
             <div>
-              <ul className="row d-flex w-40">
+              <ul className="profiler">
                   {/* <li className="col d-flex w-40">
                   <Avatars Name={this.props.auth.user && this.state.username.firstname.slice(0,1).toUpperCase()+this.state.username.lastname.slice(0,1).toUpperCase()} />
                       
@@ -67,10 +67,7 @@ componentWillReceiveProps(nextProps) {
               <i className="fas fa-sign-out-alt"></i>
               LOGOUT
             </Link> */}
-            <Link onClick={this.props.logout} href="#!">
-              <i className="fas fa-sign-out-alt"></i>
-              LOGOUT
-            </Link>
+            
             <NavbarDrawer auth={this.props.auth}  />
           </ul>
         </div>
@@ -78,7 +75,7 @@ componentWillReceiveProps(nextProps) {
     };
 
     return (
-    <div className={(this.props.location.pathname === "/register" || this.props.location.pathname === "/login") ? "hidden" : this.state.scrolled? "navbar-dreamhouse-scrolled": "navbar-dreamhouse"}>
+    <div className={(this.props.location.pathname === "/register" || this.props.location.pathname === "/login" || this.props.location.pathname === "/Admin" ) ? "hidden" : this.state.scrolled? "navbar-dreamhouse-scrolled": "navbar-dreamhouse"}>
       <div className="navbar-left">
         <div className="title">
           <Link to="/">
@@ -90,39 +87,39 @@ componentWillReceiveProps(nextProps) {
           <div class="dropdown-content ">
             <div className="inspiration">
               <div>
-              <Link className="dropdownlink" href={`/Creations/cuisine`}>
+              <Link className="dropdownlink" to={`/Creations/cuisine`}>
                 <span >Cuisine</span>
                 </Link>
-                <Link className="dropdownlink" href={`/Creation/salon`}>
+                <Link className="dropdownlink" to={`/Creation/salon`}>
                 <span >Salon</span>
                 </Link>
-                <Link className="dropdownlink"   href={`/Creations/salle de bains`}>
+                <Link className="dropdownlink"   to={`/Creations/salle de bains`}>
                 <span >Salle de bains</span>
                 </Link>
               </div>
               <div>
-              <Link className="dropdownlink" href={`/Creations/chambre`}>
+              <Link className="dropdownlink" to={`/Creations/chambre`}>
                 <span >Chambre</span>
                 </Link>
-                <Link className="dropdownlink" href={`/Creations/entrée`}>
+                <Link className="dropdownlink" to={`/Creations/entrée`}>
                 <span >Entrée</span>
                 </Link>
-                <Link className="dropdownlink" href={`/Creations/chambre enfant`}>
+                <Link className="dropdownlink" to={`/Creations/chambre enfant`}>
                 <span >Chambre enfant</span>
                 </Link>
               </div>
               <div>
-              <Link className="dropdownlink" href={`/Creations/jardin`}>
+              <Link className="dropdownlink" to={`/Creations/jardin`}>
                 <span >Jardin</span>
                 </Link>
-                <Link className="dropdownlink" href={`/Creations/salle a manger`}>
+                <Link className="dropdownlink" to={`/Creations/salle a manger`}>
                 <span >Salle à manger</span>
                 </Link>
-                <Link className="dropdownlink" href={`/Creations/Bureau`}>
+                <Link className="dropdownlink" to={`/Creations/Bureau`}>
                 <span >Bureau</span>
                 </Link>
               </div>
-            </div>
+            </div> 
           </div>
         </div>
 
@@ -130,7 +127,7 @@ componentWillReceiveProps(nextProps) {
         <div className="pros">
           <div className="pros-navbar">TROUVER DES PROS</div>
           <div class="dropdown-content pros">
-          <Link className="dropdownlink" href={`/Architecte`}>
+          <Link className="dropdownlink" to={`/Architecte`}>
             <span>Architectes d'intérieur</span>
             </Link>
             <span>Paysagistes</span>
@@ -141,7 +138,7 @@ componentWillReceiveProps(nextProps) {
         </div>
 
         <span className="ligne-item" />
-        <Link className="dropdownlink" href="/ProductList">
+        <Link className="dropdownlink" to="/ProductList">
         <div className="produits-navbar dropdownlink">PRODUITS</div>
         </Link>
         <span className="ligne-item" />
@@ -150,19 +147,19 @@ componentWillReceiveProps(nextProps) {
         <div className="marques">
         <div className="produits-navbar">MARQUES</div>
         <div class="dropdown-content pros">
-          <Link className="dropdownlink" href={`/product/meublatex`}>
+          <Link className="dropdownlink" to={`/product/meublatex`}>
             <span>Meublatex</span>
             </Link>
-            <Link className="dropdownlink" href={`/product/El Mezghani`}>
+            <Link className="dropdownlink" to={`/product/El Mezghani`}>
             <span>Mezghani</span>
             </Link>
-            <Link className="dropdownlink" href={`/product/Zen Home`}>
+            <Link className="dropdownlink" to={`/product/Zen Home`}>
             <span>Zen Home</span></Link>
-            <Link className="dropdownlink" href={`/product/Polysiége`}>
+            <Link className="dropdownlink" to={`/product/Polysiége`}>
             <span>Polysiége</span></Link>
-            <Link className="dropdownlink" href={`/product/Conforta`}>
+            <Link className="dropdownlink" to={`/product/Conforta`}>
             <span>Conforta</span></Link>
-            <Link className="dropdownlink" href={`/product/Sotufab`}>
+            <Link className="dropdownlink" to={`/product/Sotufab`}>
             <span>Sotufab</span></Link>
           </div>
         </div>

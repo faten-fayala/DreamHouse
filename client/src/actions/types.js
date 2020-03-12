@@ -22,3 +22,16 @@ export const USER_LOADED = "USER_LOADED"
 // Alert Actions
 export const SET_ALERT = "SET_ALERT"
 export const REMOVE_ALERT = "REMOVE_ALERT"
+
+
+// PANIER ACTIONS
+export const ADD_TO_CART="ADD_TO_CART"
+export const GET_ITEMS_CART="GET_ITEMS_CART"
+export const CLEAR_CART="CLEAR_CART"
+export const DELETE_FROM_CART="DELETE_FROM_CART"
+
+export const SUBMIT_ORDER="SUBMIT_ORDER"
+export const ORDER_ERROR="ORDER_ERROR"
+export const GET_ORDER="GET_ORDER"
+
+
