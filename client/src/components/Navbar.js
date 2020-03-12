@@ -35,9 +35,9 @@ componentWillReceiveProps(nextProps) {
           <li className="col login">
             <Link to="/login">Login </Link>
           </li>
-          <li className="col">
+          {/* <li className="col">
             <Link to="/register">Register </Link>
-          </li>
+          </li> */}
         </ul>
       );
     };
@@ -47,7 +47,7 @@ componentWillReceiveProps(nextProps) {
       //  let logo=this.state.username.firstname.slice(0,1)+this.state.username.lastname.slice(0,1)
           return(
             <div>
-              <ul className="row d-flex w-40">
+              <ul className="profiler">
                   {/* <li className="col d-flex w-40">
                   <Avatars Name={this.props.auth.user && this.state.username.firstname.slice(0,1).toUpperCase()+this.state.username.lastname.slice(0,1).toUpperCase()} />
                       
@@ -67,10 +67,7 @@ componentWillReceiveProps(nextProps) {
               <i className="fas fa-sign-out-alt"></i>
               LOGOUT
             </Link> */}
-            <Link onClick={this.props.logout} to="#!">
-              <i className="fas fa-sign-out-alt"></i>
-              LOGOUT
-            </Link>
+
             <NavbarDrawer auth={this.props.auth}  />
           </ul>
         </div>
@@ -78,7 +75,7 @@ componentWillReceiveProps(nextProps) {
     };
 
     return (
-    <div className={(this.props.location.pathname === "/register" || this.props.location.pathname === "/login") ? "hidden" : this.state.scrolled? "navbar-dreamhouse-scrolled": "navbar-dreamhouse"}>
+    <div className={(this.props.location.pathname === "/register" || this.props.location.pathname === "/login" || this.props.location.pathname === "/Admin" ) ? "hidden" : this.state.scrolled? "navbar-dreamhouse-scrolled": "navbar-dreamhouse"}>
       <div className="navbar-left">
         <div className="title">
           <Link to="/">
@@ -122,7 +119,7 @@ componentWillReceiveProps(nextProps) {
                 <span >Bureau</span>
                 </Link>
               </div>
-            </div>
+            </div> 
           </div>
         </div>
 

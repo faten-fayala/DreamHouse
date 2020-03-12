@@ -48,10 +48,13 @@ class MesDemandes extends React.Component {
             }
     }
     
+    componentWillReceiveProps(nextProps) {
+      this.setState({username: nextProps.auth.user})
+    }
     componentDidMount(){
         this.props.loadUser()
         this.props.getDemand()
-        this.setState({rows: this.props.demand})
+        this.setState({rows: this.props.demand.filter(el=> el.user === this.state.username._id )})
     }
     //WARNING! To be deprecated in React v17. Use new lifecycle static getDerivedStateFromProps instead.
     componentWillReceiveProps(nextProps) {
@@ -106,7 +109,8 @@ class MesDemandes extends React.Component {
 }
 const mapStateToProps = state=>{
     return{
-        demand:state.demand.demand
+        demand:state.demand.demand,
+        
     }
 }
 export default connect(mapStateToProps, {getDemand,loadUser})(MesDemandes)

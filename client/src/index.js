@@ -46,6 +46,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Marque from './Marque';
 import Footer from './Footer';
 import NavbarDrawer from './components/NavbarDrawer';
+import Panier from './components/Panier';
 
 
 ReactDOM.render(
@@ -76,6 +77,8 @@ ReactDOM.render(
         <Route exact path='/product/Marque/:id' component={ProductDetailsMarque} />
 
         <Route exact path="/register" component={Register} />
+        <Route exact path="/Panier" component={Panier} />
+
         <Route exact path="/MesDemandes" component={MesDemandes} />
 
         <Route exact path="/Creations/salle de bains" component={Salledebain} />
@@ -88,7 +91,7 @@ ReactDOM.render(
         {/* <Route exact path="/Acceuil" component={Acceuil} /> */}
         <Route exact path="/Publicite" component={Publicite} />
     </Switch>
-    {/* <Footer/> */}
+    <Footer/>
 </Provider>
 </BrowserRouter> 
 , document.getElementById('root'));

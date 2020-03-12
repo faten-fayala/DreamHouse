@@ -13,6 +13,7 @@ export class ProductDetailsMarque extends Component {
     render() {
         return (
             <div>
+
                 {this.props.products.filter(el=> el._id=== this.props.match.params.id).map(x=>
                 
                 <div className="product-description">
@@ -22,8 +23,9 @@ export class ProductDetailsMarque extends Component {
       {/* <p className="marque-product">Style: {x.Style}</p> */}
       <p className="price-product">{x.Price} DT</p>
       </div>   )}
+      
             </div>
-        )
+      )
     }
 }
 const mapStateToProps = state=>{
