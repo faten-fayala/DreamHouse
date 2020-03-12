@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import ProductItem from "./ProductItem";
 import { getproduct } from "./actions/ProductAction";
 import { Link } from "react-router-dom";
-
+import { addPanier} from './actions/PanierActions'
 export class ProductDetails extends Component {
   componentDidMount() {
     this.props.getproduct();
@@ -44,6 +44,7 @@ export class ProductDetails extends Component {
                 <p className="style-details">Style: {x.Style}</p>
                 <p className="price-details">Prix: {x.Price} DT</p> */}
               </div>
+              <button onClick={()=>this.props.addPanier(x)}>Panier </button>
             </div>
           ))}
       </div>
@@ -55,4 +56,4 @@ const mapStateToProps = state => {
     products: state.ProductReducer.product
   };
 };
-export default connect(mapStateToProps, { getproduct })(ProductDetails);
+export default connect(mapStateToProps, {addPanier, getproduct })(ProductDetails);

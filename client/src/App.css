@@ -75,6 +75,9 @@ width:100%
   display:flex;
   align-items: center;
 }
+.MuiTableCell-body{
+  width: 80% !important;
+}
 .oneDemand{
   display: flex;
   flex-direction: column;
@@ -156,4 +159,11 @@ font-weight: bold;
 }
 .MuiStepIcon-completed .MuiStepIcon-active{
   color:red !important;
+}
+.profiler{
+  padding-right:10px ;
+  padding-top:5px ;
+  align-items: center;
+  align-self: center;
+  align-content: center;
 }

@@ -20,6 +20,10 @@ const ProductSchema = mongoose.Schema({
     Price:{
         type:Number,
         required:true
+    },
+    units:{
+        type:Number,
+        required:false
     }
   
 }
