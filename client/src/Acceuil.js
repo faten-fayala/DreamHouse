@@ -12,7 +12,7 @@ class Acceuil extends Component {
     super(props);
     this.state = {
       imgs: [
-        {text:"un",
+        {
           classe: "moderne",
           imgURL:
             "https://st.hzcdn.com/simgs/7261dfa30d9364c0_8-6609/moderno-salon.jpg",

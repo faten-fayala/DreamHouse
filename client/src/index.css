@@ -165,8 +165,18 @@ h2 p strong{
   background-image: url('https://st.hzcdn.com/simgs/3691efcc0ca74c89_8-0171/classique-chic-salon.jpg');
 }
 .style span{
-  background: rgba(255, 255, 255, 0.795);
+  /* background: rgba(255, 255, 255, 0.795); */
+  background: white;
   padding: 5px 10px;
+  text-transform: uppercase;
+  color: #222;
+  /* font-weight: bold; */
+  opacity: 0.8;
+  font-family:FuturaStdLight,Arial,sans-serif;
+  letter-spacing: .025em;
+}
+.style:hover span{
+ font-size: 16px;
 }
 .scandinave{
   position:absolute;
@@ -230,7 +240,7 @@ h2 p strong{
   left:63%;
   width:230px;
   height:230px; 
-  background-image: url('https://www.heyho.fr/wp-content/uploads/2019/01/deco-scandinave.jpg');
+  background-image: url('https://st.hzcdn.com/simgs/b311b9680bbeaf03_8-3312/industriel-salon.jpg');
 }
 .naturel{
   position:absolute;
@@ -238,7 +248,7 @@ h2 p strong{
   left:80%;
   width:194px;
   height:194px;  
-  background-image: url('https://www.heyho.fr/wp-content/uploads/2019/01/deco-scandinave.jpg');
+  background-image: url('https://www.deco.fr/sites/default/files/styles/card_480x275/public/2019-12/d%C3%A9co-jungle-chic.jpg?itok=rMGg9dkY');
 }
 .electrique{
   position:absolute;
@@ -246,7 +256,7 @@ h2 p strong{
   left:85%;
   width:165px;
   height:165px;  
-  background-image: url('https://www.heyho.fr/wp-content/uploads/2019/01/deco-scandinave.jpg');
+  background-image: url('https://st.hzcdn.com/simgs/51c1f70f058bc291_8-6206/eclectique-salon.jpg');
 }
 .texton{
   display: flex;
@@ -278,6 +288,7 @@ font-family: FuturaStdLight,Arial,sans-serif;
   height:233px;
   z-index: 555555;
 }
+
 .Logo-dream-house{
   position: absolute;
   top:30%;
@@ -960,17 +971,17 @@ width:80px;
   padding:12px 14px;
   opacity:0.8;
 }
-.style:hover .un{
+/* .style:hover .un{
   /* transform: scale(1.2); */
 
-  position:absolute;
+  /* position:absolute;
   top:50%;
   left:50%;
   z-index: 100000000000;
   transform: translate(-50%, -50%);
-}
+} */ 
 
-.test-hepta{
+/* .test-hepta{
   clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
   background-image: url('https://sf1.viepratique.fr/wp-content/uploads/sites/8/2012/02/Salon3-550x410.jpg');
   background-position: center;
@@ -981,11 +992,11 @@ width:80px;
   align-items: center;
   justify-content: center;
   transition: 0.5s all;
-}
-.test-hepta:hover{
+} */
+/* .test-hepta:hover{
   transform: scale(1.1);
 }
 .test-hepta span{
   background: rgba(255, 255, 255, 0.795);
   padding: 5px 10px;
-}
+} */

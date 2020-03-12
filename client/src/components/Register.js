@@ -145,7 +145,8 @@ componentWillReceiveProps(nextProps){
             <span>Vous avez déjà un compte ? </span>
             {/* <span className="text-inscri">C'est votre première visite ?
 DREAM HOUSE vous invite à cliquer sur Créer un compte.</span> */}
-            <button className="button-inscription">SE CONNECTER</button>
+ <Link to="/login">
+            <button className="button-inscription">SE CONNECTER</button></Link>
           </div>
         </div>
         <span className="text-connexion">Bienvenue sur DREAM HOUSE</span>

@@ -1,6 +1,6 @@
 import React, { Children } from 'react';
-import Image from '../dreamhouse.png'
-import {Link , withRouter} from 'react-router-dom'
+import Image from '../dreamhouse.png';
+import {Link , withRouter} from 'react-router-dom';
 import {logout} from '../actions/AuthActions'
 import {connect} from 'react-redux'
 import Avatars from './Avatars'
@@ -63,11 +63,11 @@ componentWillReceiveProps(nextProps) {
             <li className="col">
               <Link to="/MesDemandes">Mes Demandes </Link>
             </li>
-            <Link onClick={this.props.logout} href="#!">
+            <Link onClick={this.props.logout} to="#!">
               <i className="fas fa-sign-out-alt"></i>
               LOGOUT
             </Link> */}
-            
+
             <NavbarDrawer auth={this.props.auth}  />
           </ul>
         </div>
