@@ -4,6 +4,7 @@ import {login,clearError } from '../actions/AuthActions'
 import {setAlert,removeAlert} from '../actions/AlertActions'
 import { v4 as uuidv4 } from 'uuid';
 import {Link} from 'react-router-dom';
+import Image from '../dreamhouse.png';
 
 export class Login extends Component {
     constructor(props) {
@@ -122,17 +123,18 @@ export class Login extends Component {
        
             <div className="coordonnee">
               <div className="login-nav">
-              <a className="backtomenu" href="/">
+              <Link className="backtomenu" to="/">
                 <div className="login-retour">
                   <i class="fas fa-arrow-left"></i>
                   <span>Retour à l'accueil</span>
                 </div>
-                </a>
+                </Link>
                 <div>
                   <span>Vous n'avez pas encore de compte ?</span>
                   {/* <span className="text-inscri">C'est votre première visite ?
     DREAM HOUSE vous invite à cliquer sur Créer un compte.</span> */}
-                  <button className="button-inscription">CREER UN COMPTE!</button>
+     <Link to="/register">
+                  <button className="button-inscription">CREER UN COMPTE!</button></Link>
                 </div>
               </div>
               <span className="text-connexion">Connectez-vous à DREAM HOUSE</span>

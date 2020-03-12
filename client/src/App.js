@@ -8,7 +8,8 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import Publicite from './Publicite';
  import ProductList from './ProductList';
- import setAuthToken from './utils/setAuthToken'
+ import setAuthToken from './utils/setAuthToken';
+ import Sac from './sac';
 import Login from './components/loginn';
 // SET THE TOKEN INSIDE THE REQUEST'S HEADER
 if(localStorage.token){
@@ -20,7 +21,7 @@ function App() {
     <div className="App">
 
     {/* <Login/> */}
-
+{/* <Sac/> */}
       {/* <Navbar/> */}
       {/* <Architecte/> */}
        <Acceuil/>
