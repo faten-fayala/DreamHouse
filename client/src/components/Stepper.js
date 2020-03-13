@@ -59,7 +59,6 @@ class Stepp extends React.Component {
   }
 
 
-
   handleStyle =styledemanded=>{
     this.setState({styledemanded: styledemanded})
   }
@@ -158,6 +157,7 @@ class Stepp extends React.Component {
     const { activeStep } = this.state;
 
     return (
+      
       <div id="paddingTop">
       <Container>
       <div className={classes.root}>

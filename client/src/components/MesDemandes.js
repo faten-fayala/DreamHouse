@@ -54,13 +54,13 @@ class MesDemandes extends React.Component {
     componentDidMount(){
         this.props.loadUser()
         this.props.getDemand()
-        this.setState({rows: this.props.demand.filter(el=> el.user === this.state.username._id )})
+        this.setState({rows: this.props.demand.filter(el => el.user === this.props.auth.user._id)})
     }
     //WARNING! To be deprecated in React v17. Use new lifecycle static getDerivedStateFromProps instead.
-    componentWillReceiveProps(nextProps) {
-        this.setState({rows: nextProps.demand})
+    // componentWillReceiveProps(nextProps) {
+    //     this.setState({rows: nextProps.demand})
         
-    }
+    // }
   render(){
       
     return (
@@ -78,6 +78,7 @@ class MesDemandes extends React.Component {
               <StyledTableCell align="right">Piéce Actuel&nbsp;</StyledTableCell>
               <StyledTableCell align="right">Inspiration&nbsp;</StyledTableCell>
               <StyledTableCell align="right">Demandes Spécefiques&nbsp;</StyledTableCell>
+              <StyledTableCell align="right">Date&nbsp;</StyledTableCell>
               <StyledTableCell align="right">Status&nbsp;</StyledTableCell>
             </TableRow>
           </TableHead>
@@ -95,6 +96,8 @@ class MesDemandes extends React.Component {
                 <StyledTableCell align="right">{row.actualpiece}</StyledTableCell>
                 <StyledTableCell align="right">{row.inspiration}</StyledTableCell>
                 <StyledTableCell align="right">{row.speceficdemand}</StyledTableCell>
+                <StyledTableCell align="right">{row.date}</StyledTableCell>
+               
                 <StyledTableCell align="right"> {(!row.confirmed && !row.denied)?<p>votre demande est en attente de confirmation</p> : (row.confirmed)? 'votre demande a été prise en charege': 'votre demande a été refusé' }</StyledTableCell>
 
                 {/* <StyledTableCell align="right">{row.protein}</StyledTableCell> */}
@@ -110,7 +113,7 @@ class MesDemandes extends React.Component {
 const mapStateToProps = state=>{
     return{
         demand:state.demand.demand,
-        
+        auth : state.auth
     }
 }
 export default connect(mapStateToProps, {getDemand,loadUser})(MesDemandes)
