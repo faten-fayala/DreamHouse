@@ -20,9 +20,10 @@ class ProductList extends Component {
         {/* <h1 className="title">Products</h1> */}
         <div className="products">
           {this.props.products.map(el => (
+          <Link className="amr" to={`/products/${el._id}`}>
           
           <ProductItem product={el} />
-          
+          </Link>
         ))}
         </div>
         

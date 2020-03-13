@@ -20,6 +20,8 @@ import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import BuildSharpIcon from '@material-ui/icons/BuildSharp';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import project from './project.png'
+import sa from './sa.svg'
 const styles = {
   list: {
     width: 250
@@ -137,7 +139,9 @@ class TemporaryDrawer extends React.Component {
                 <Link className="dropdownlink1" to="/projectcreation">
                   <ListItem divider={true} button key="">
                     <ListItemIcon>{<BuildSharpIcon/>}</ListItemIcon>
-                    <ListItemText primary="Crée votre projet" />
+                    {/* <ListItemIcon>{<img  src={sa}/>}</ListItemIcon> */}
+
+                    <ListItemText primary="Créer votre projet" />
                   </ListItem>
                   
                 </Link>
