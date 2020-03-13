@@ -57,7 +57,6 @@ class MesDemandes extends React.Component {
     }
     componentDidMount(){
         this.props.loadUser()
-        
     }
     //WARNING! To be deprecated in React v17. Use new lifecycle static getDerivedStateFromProps instead.
     // componentWillReceiveProps(nextProps) {
@@ -101,7 +100,9 @@ class MesDemandes extends React.Component {
                 <StyledTableCell align="right">{row.speceficdemand}</StyledTableCell>
                 <StyledTableCell align="right">{row.date}</StyledTableCell>
                
+
                 <StyledTableCell align="right"> {(!row.confirmed && !row.denied)?"votre demande est en attente de confirmation" : (row.confirmed)? 'votre demande a été prise en charge': 'votre demande a été refusé' }</StyledTableCell>
+
 
                 {/* <StyledTableCell align="right">{row.protein}</StyledTableCell> */}
               </StyledTableRow>
