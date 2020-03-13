@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import ProductItem from "./ProductItem";
 import { getproduct } from "./actions/ProductAction";
+import { loadUser } from "./actions/AuthActions";
 import { Link } from "react-router-dom";
 import { addPanier} from './actions/PanierActions'
 export class ProductDetails extends Component {
   componentDidMount() {
     this.props.getproduct();
+    this.props.loadUser()
   }
 
   render() {
@@ -56,4 +58,4 @@ const mapStateToProps = state => {
     products: state.ProductReducer.product
   };
 };
-export default connect(mapStateToProps, {addPanier, getproduct })(ProductDetails);
+export default connect(mapStateToProps, {loadUser,addPanier, getproduct })(ProductDetails);

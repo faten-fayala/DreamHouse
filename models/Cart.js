@@ -1,13 +1,13 @@
-// const mongoose =require('mongoose')
-// const CartSchema = mongoose.Schema({
-//     user:{
-//         type:mongoose.Schema.Types.ObjectId,
-//         ref: 'users'
-//     },
-//     cart:{
-//         type:Array,
-//         required:true
-//     }
-// })
+const mongoose =require('mongoose')
+const CartSchema = mongoose.Schema({
+    user:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref: 'users'
+    },
+    cart:{
+        type:Array,
+        required:false
+    }
+})
 
-// module.exports = mongoose.model('cart',CartSchema)
+module.exports = mongoose.model('cart',CartSchema)

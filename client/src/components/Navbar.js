@@ -5,6 +5,9 @@ import {logout} from '../actions/AuthActions'
 import {connect} from 'react-redux'
 import Avatars from './Avatars'
 import NavbarDrawer from './NavbarDrawer'
+import LockRoundedIcon from '@material-ui/icons/LockRounded';
+// import FavoriteIcon from '@material-ui/icons/Favorite';
+// import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 class Navbar extends React.Component {
 constructor(props){
   super(props)
@@ -29,16 +32,21 @@ componentWillReceiveProps(nextProps) {
         }
   render(){
     console.log(this.props.location.pathname)
+ 
+   
     const Guest = () => {
       return (
-        <ul className="row d-flex w-25">
-          <li className="col login">
-            <Link to="/login">Login </Link>
-          </li>
-          {/* <li className="col">
+        <div>
+          <div className="login">
+           
+                        <Link  className="login" to="/login"> <LockRoundedIcon/>   LOGIN </Link>
+                        
+          </div>
+        
+        {/* <li className="col">
             <Link to="/register">Register </Link>
           </li> */}
-        </ul>
+    </div>
       );
     };
     
@@ -46,27 +54,11 @@ componentWillReceiveProps(nextProps) {
     const userConnected  =()=>{
       //  let logo=this.state.username.firstname.slice(0,1)+this.state.username.lastname.slice(0,1)
           return(
-            <div>
+            <div >
               <ul className="profiler">
-                  {/* <li className="col d-flex w-40">
-                  <Avatars Name={this.props.auth.user && this.state.username.firstname.slice(0,1).toUpperCase()+this.state.username.lastname.slice(0,1).toUpperCase()} />
-                      
-                       { this.props.auth.user && this.props.auth.user.firstname + ' ' + this.props.auth.user.lastname}
-  </li> */}
-  
-            {/* <li className="col">
-               <Link to="/" >HOME</Link>
-               </li> */}
-            {/* <li className="col">
-              <Link to="/projectcreation">Project</Link>
-            </li>
-            <li className="col">
-              <Link to="/MesDemandes">Mes Demandes </Link>
-            </li>
-            <Link onClick={this.props.logout} to="#!">
-              <i className="fas fa-sign-out-alt"></i>
-              LOGOUT
-            </Link> */}
+            
+            {/* <FavoriteIcon/>
+            <ShoppingCartIcon/> */}
 
             <NavbarDrawer auth={this.props.auth}  />
           </ul>
@@ -90,7 +82,7 @@ componentWillReceiveProps(nextProps) {
               <Link className="dropdownlink" to={`/Creations/cuisine`}>
                 <span >Cuisine</span>
                 </Link>
-                <Link className="dropdownlink" to={`/Creation/salon`}>
+                <Link className="dropdownlink" to={`/Creations/salon`}>
                 <span >Salon</span>
                 </Link>
                 <Link className="dropdownlink"   to={`/Creations/salle de bains`}>

@@ -3,6 +3,8 @@ import Image from "./dreamhouse.png";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import uuid from "uuid";
+import {loadUser} from './actions/AuthActions';
+
 import "./architecte.css";
 class Creations extends Component {
   constructor(props) {
@@ -48,6 +50,9 @@ class Creations extends Component {
       ]
     };
   }
+  componentDidMount(){
+    this.props.loadUser()
+  }
   render() {
     return (
         <div>
@@ -72,4 +77,4 @@ class Creations extends Component {
   }
 }
 
-export default Creations;
+export default connect(null,{loadUser})(Creations);

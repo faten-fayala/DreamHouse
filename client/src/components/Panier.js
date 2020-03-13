@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getPanier, clearPanier, deleteItem } from '../actions/PanierActions'
+import { getPanier, clearPanier, deleteItem,submitOrder } from '../actions/PanierActions'
+import { loadUser} from '../actions/AuthActions'
 
 class Panier extends Component {
     constructor(props) {
@@ -21,6 +22,7 @@ class Panier extends Component {
 // }
 componentDidMount() {
     this.props.getPanier()
+    this.props.loadUser()
     
 }
 
@@ -36,6 +38,10 @@ componentDidMount() {
                 this.props.clearPanier()
                 this.props.getPanier()
                 }}>Clear Cart</button>
+                        <button onClick={()=>{this.props.submitOrder(["tarek","aaaa"])
+                        this.props.getPanier()
+                        }}>SUBMIT</button>
+                
                 <div>
                     {this.props.panier.length !== 0 ? this.props.panier.map(el=> (
                         <div>
@@ -56,4 +62,4 @@ const mapStateToProps=state=>{
 }
 
 
-export default connect(mapStateToProps, { getPanier, clearPanier, deleteItem })(Panier)
+export default connect(mapStateToProps, {loadUser, getPanier, clearPanier, deleteItem,submitOrder })(Panier)

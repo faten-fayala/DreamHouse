@@ -3,6 +3,7 @@ import Image from "./dreamhouse.png";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import uuid from "uuid";
+import {loadUser} from './actions/AuthActions';
 
 class Salon extends Component {
   constructor(props) {
@@ -84,6 +85,9 @@ class Salon extends Component {
       ]
     };
   }
+  componentDidMount(){
+    this.props.loadUser()
+  }
   render() {
     return (
       <div className="creations-piece-body">
@@ -95,6 +99,7 @@ class Salon extends Component {
               <span className="cuisine-realizedby">{el.Realizedby}</span>
               <div class="middle">
                 <div>
+
                   <svg
                     class="icon"
                     version="1.1"
@@ -118,4 +123,4 @@ class Salon extends Component {
   }
 }
 
-export default Salon;
+export default connect(null,{loadUser})(Salon);

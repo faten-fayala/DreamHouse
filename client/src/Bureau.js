@@ -3,6 +3,7 @@ import Image from "./dreamhouse.png";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import uuid from "uuid";
+import {loadUser} from './actions/AuthActions';
 
 class Bureau extends Component {
   constructor(props) {
@@ -66,6 +67,9 @@ class Bureau extends Component {
       ]
     };
   }
+  componentDidMount(){
+    this.props.loadUser()
+  }
   render() {
     return (
       <div className="creations-piece-body">
@@ -100,4 +104,4 @@ class Bureau extends Component {
   }
 }
 
-export default Bureau;
+export default connect(null,{loadUser})(Bureau);

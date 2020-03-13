@@ -26,40 +26,40 @@ export const deleteItem = id =>{
 
 
 
-// // GET_ORDER_BY ADMIN
-// export const getOrder = () =>dispatch=>{
-//     const config={
-//         headers:{
-//             "Content-Type":"application/json"
-//         }
-//     }
-//     axios.get('/api/cart',config)
-//         .then(res=>dispatch({
-//             type : GET_ORDER,
-//             payload:res.data
-//         }))
-//         .catch(err=> dispatch({
-//             type:ORDER_ERROR,
-//             payload:err.response.msg
-//         }))
-//     }
+// GET_ORDER_BY ADMIN
+export const getOrder = () =>dispatch=>{
+    const config={
+        headers:{
+            "Content-Type":"application/json"
+        }
+    }
+    axios.get('/api/cart',config)
+        .then(res=>dispatch({
+            type : GET_ORDER,
+            payload:res.data
+        }))
+        .catch(err=> dispatch({
+            type:ORDER_ERROR,
+            payload:err.response.msg
+        }))
+    }
 
 
-// // SUBMIT ORDER
-//     export const  submitOrder = newOrder =>dispatch=>{
-//         const config={
-//             headers:{
-//                 "Content-Type":"application/json"
-//             }
-//         }
-//         axios.post('/api/cart', newOrder ,config)
-//             .then(res => dispatch({
-//                 type:SUBMIT_ORDER,
-//                 payload : res.data
-//             })  
-//         )
-//             .catch(err=> dispatch({
-//                 type:ORDER_ERROR,
-//                 payload:err.msg
-//             }) )
-//     }
+// SUBMIT ORDER
+    export const  submitOrder = newOrder =>dispatch=>{
+        const config={
+            headers:{
+                "Content-Type":"application/json"
+            }
+        }
+        axios.post('/api/cart', newOrder ,config)
+            .then(res => dispatch({
+                type:SUBMIT_ORDER,
+                payload : res.data
+            })  
+        )
+            .catch(err=> dispatch({
+                type:ORDER_ERROR,
+                payload:err.msg
+            }) )
+    }

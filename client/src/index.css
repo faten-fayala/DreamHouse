@@ -113,7 +113,7 @@ margin-top: 10px;
   /* background-image: url("https://cdn.shopify.com/s/files/1/0291/8242/7276/files/banner-v5-1.jpg?v=1577695162");
   background-repeat: no-repeat;
   background-size: cover;*/
-  height:680px;  
+  height:860px;  
   background-color:#eeeeee ;
   margin-top: 20px;
   position: relative;
@@ -204,8 +204,8 @@ h2 p strong{
 } 
 .tounsi{
   position:absolute;
-  top:72%;
-  left:30%;
+  top:69%;
+  left:28%;
   width:151px;
   height:151px;
   background-image: url('https://www.ideomagazine.com/wp-content/uploads/2018/12/3-7.jpg');
@@ -619,11 +619,13 @@ td{
   line-height: 23px;
     font-weight: 700;
     letter-spacing: 2px;
+    padding-left: 40px;
  
 }
 .navbarDrawer{
-  z-index: 99999999;
+  z-index: 99999999999;
 display: flex;
+overflow: hidden !important;
 justify-content: flex-start;
 width: 100%;
 
@@ -634,11 +636,12 @@ width: 100%;
     
 }
 .navbar-dreamhouse{
-  z-index: 999999;
+  z-index: 99;
 position:fixed;
 display: flex;
 justify-content: space-between;
 width: 100%;
+align-items: center !important;
 font-size: 14px;
 padding:10px;
 }
@@ -806,14 +809,14 @@ align-items: center;
 }
 
 .navbar-dreamhouse-scrolled{
-  z-index: 9999;
+  z-index: 999;
   position:fixed;
-  
+  align-items: center !important;
   display: flex;
   justify-content: space-between;
   width: 100%;
   font-size: 14px;
-  padding:0px;
+  padding:10px;
   background-color: white;
   box-shadow: 0px 6px 5px 0px rgba(217,208,217,1);
 }

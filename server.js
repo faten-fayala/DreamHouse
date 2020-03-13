@@ -18,7 +18,7 @@ app.use('/architecte',require("./routes/architectes"))
 app.use('/product',require("./routes/products"))
 app.use('/api/user',require('./routes/users'))
 app.use('/api/auth',require('./routes/auth'))
-// app.use('/api/cart',require('./routes/cart'))
+app.use('/api/cart',require('./routes/cart'))
 app.use('/api/demand',require('./routes/demand'))
 
 

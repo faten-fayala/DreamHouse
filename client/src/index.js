@@ -5,6 +5,8 @@ import App from './App';
 import Creations from './Creations';
 import Fournisseurs from './Fournisseurs';
 import ProductList from './ProductList';
+import ProductItem from './ProductItem';
+
 import Acceuil from './Acceuil';
 import Style from './Style';
 import Cuisine from './Cuisine';
@@ -70,17 +72,14 @@ ReactDOM.render(
         <Route exact path="/Creations/salon" component={Salon} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/Admin" component={Admin} />
-
         <Route exact path='/style/:style' component={Style} />
         <Route exact path='/product/:marque' component={Marque} />
         <Route exact path='/product/Style/:id' component={ProductDetails} />
         <Route exact path='/product/Marque/:id' component={ProductDetailsMarque} />
-
+        <Route exact path='/products/:id' component={ProductItem}/>
         <Route exact path="/register" component={Register} />
-        <Route exact path="/Panier" component={Panier} />
-
-        <Route exact path="/MesDemandes" component={MesDemandes} />
-
+        <PrivateRoute exact path="/Panier" component={Panier} />
+        <PrivateRoute exact path="/MesDemandes" component={MesDemandes} />
         <Route exact path="/Creations/salle de bains" component={Salledebain} />
         <Route exact path="/Creations/chambre" component={Chambre} />
         <Route exact path="/Creations/chambre enfant" component={ChambreEnfant} />

@@ -3,11 +3,15 @@ import Image from "./dreamhouse.png";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import "./footer.css";
-
+import {loadUser} from './actions/AuthActions'
 class Publicite extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+  }
+
+  componentDidMount(){
+    this.props.loadUser()
   }
   render() {
     return (
@@ -52,5 +56,9 @@ class Publicite extends Component {
     );
   }
 }
+// const mapStateToProps = state =>{
+//   return{
 
-export default Publicite;
+//   }
+// }
+export default connect(null,{loadUser})(Publicite);

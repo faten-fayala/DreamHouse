@@ -28,8 +28,12 @@ import React, { Component } from "react";
 import Image from "./dreamhouse.png";
 import Publicite from './Publicite';
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link , withRouter} from "react-router-dom";
 import "./footer.css";
+import Fb from "./facebook.png";
+import Insta from "./instagram.png";
+import Youtube from "./youtube.png";
+
 
 class Footer extends Component {
   constructor(props) {
@@ -40,9 +44,13 @@ class Footer extends Component {
       ]
     };
   }
+  componentWillReceiveProps(nextProps) {
+    this.setState({username: nextProps.auth.user})
+  }
   render() {
     return (
-      <div className="footer">
+    <div className={(this.props.location.pathname === "/register" || this.props.location.pathname === "/login" || this.props.location.pathname === "/Admin" ) ? "hidden" :"footer"}>
+      
         <div className="footer-items">
         <div className="footer-logo" >
        <a href="/" ><img src={Image} className="img-footer" /></a>
@@ -73,7 +81,7 @@ class Footer extends Component {
         
         <div className="footer-title-publicite">
          <a className="footerlink" href="/Publicite">
-         <span className="footer-description-items">Publicité</span>
+         <span className="footer-description-items-publicite">Publicité</span>
         </a>
         </div>
         <div className="footer-description-items">
@@ -88,10 +96,21 @@ class Footer extends Component {
         <div className="footer-description ligne">
         
         </div>
-        <div className="footer-description">
+        <div className="footer-description connexion">
         {/* RESTONS CONNECTÉS */}
-        NOUS SUIVRE
+        <div className="nous-suivre">
+         NOUS SUIVRE 
         </div>
+        <div className="logo-connexion" >
+          <a href="https://www.facebook.com/">
+        <img src={Fb} className="logo-connexion-items" /></a>
+        <a href="https://www.instagram.com/">
+        <img src={Insta} className="logo-connexion-items" /></a>
+        <a href="https://www.youtube.com/">
+        <img src={Youtube} className="logo-connexion-items" /></a>
+        
+       
+        </div></div>
         <div>
       
         </div>
@@ -102,7 +121,12 @@ class Footer extends Component {
   }
 }
 
-export default Footer;
+const mapStateToProps = state => {
+  return {
+    auth: state.auth
+  };
+};
+export default connect(mapStateToProps)(withRouter(Footer));
 
 
   {/* <div className="title">
