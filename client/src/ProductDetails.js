@@ -13,7 +13,7 @@ export class ProductDetails extends Component {
 
   render() {
     return (
-      <div>
+      <div className="Top">
         {this.props.products
           .filter(el => el._id === this.props.match.params.id)
           .map(x => (

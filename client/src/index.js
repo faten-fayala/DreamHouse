@@ -49,6 +49,7 @@ import Marque from './Marque';
 import Footer from './Footer';
 import NavbarDrawer from './components/NavbarDrawer';
 import Panier from './components/Panier';
+import Details  from './Details';
 
 
 ReactDOM.render(
@@ -75,8 +76,8 @@ ReactDOM.render(
         <Route exact path='/style/:style' component={Style} />
         <Route exact path='/product/:marque' component={Marque} />
         <Route exact path='/product/Style/:id' component={ProductDetails} />
-        <Route exact path='/product/Marque/:id' component={ProductDetailsMarque} />
-        <Route exact path='/products/:id' component={ProductItem}/>
+        <Route exact path='/product/Marque/:id' component={ProductDetails} />
+        <Route exact path='/products/:id' component={ProductDetails}/>
         <Route exact path="/register" component={Register} />
         <PrivateRoute exact path="/Panier" component={Panier} />
         <PrivateRoute exact path="/MesDemandes" component={MesDemandes} />

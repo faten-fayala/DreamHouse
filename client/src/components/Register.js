@@ -22,7 +22,7 @@ phone:null
         this.setState({[e.target.name]:e.target.value})
     }
     registerNow = () =>{
-        if(this.state.firstname ===''||this.state.lastname ===''||this.state.email ===''||this.state.password ===''){
+        if(this.state.firstname ===''||this.state.lastname ===''||this.state.email ===''||this.state.password ===''|| !this.state.email.includes('@')) {
             let id=uuidv4()
             this.props.setAlert('please all fields are required','warning',id)
             setTimeout(() => {
