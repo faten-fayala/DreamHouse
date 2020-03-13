@@ -15,7 +15,11 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { logout } from "../actions/AuthActions";
-
+import FolderIcon from '@material-ui/icons/Folder';
+import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import BuildSharpIcon from '@material-ui/icons/BuildSharp';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 const styles = {
   list: {
     width: 250
@@ -72,11 +76,13 @@ class TemporaryDrawer extends React.Component {
           />
         </div>
 
+
         <Drawer
           anchor="right"
           open={this.state.right}
           onClose={this.toggleDrawer("right", false)}
         >
+          
           <div
             tabIndex={0}
             role="button"
@@ -85,54 +91,61 @@ class TemporaryDrawer extends React.Component {
           >
             <div className={`${classes.list}`}>
               <List>
-                <ListItem button key="">
-                  {/* <ListItemIcon>{index=== 0 && 
-               }</ListItemIcon> */}
-                  <ListItemText primary="" />
-                </ListItem>
+                
                 <ListItem divider={true} button key="">
-                  {/* <ListItemIcon>{index=== 0 && 
-               }</ListItemIcon> */}
+                  <ListItemIcon>{<Avatars 
+              id="profil"
+            Name={
+              this.props.auth.user &&
+              this.state.username.firstname.slice(0, 1).toUpperCase() +
+                this.state.username.lastname.slice(0, 1).toUpperCase()
+            }
+          />
+               }</ListItemIcon>
                   <ListItemText
                     primary={`${this.props.auth.user &&
-                      this.props.auth.user.firstname +
+                      this.props.auth.user.firstname.toUpperCase() +
                         " " +
-                        this.props.auth.user.lastname}`}
+                        this.props.auth.user.lastname.toUpperCase()}`}
                   />
                 </ListItem>
-                <ListItem button key="">
-                  {/* <ListItemIcon>{index=== 0 && 
-               }</ListItemIcon> */}
-                  <ListItemText primary="" />
-                </ListItem>
+               
                 <ListItem button divider={true} key="">
-                  {/* <ListItemIcon>{index=== 0 && 
-               }</ListItemIcon> */}
-                  <ListItemText primary="" />
+                  <ListItemIcon>{<FavoriteIcon/>
+               }</ListItemIcon>
+                  <ListItemText primary="Favoris" />
                 </ListItem>
                 
                 
                 <Link className="dropdownlink1" to="/Panier">
                   <ListItem divider={true} button key="">
-                    {/* <ListItemIcon>{index=== 0 && 
-               }</ListItemIcon> */}
-                    <ListItemText primary="Favoris" />
+                    <ListItemIcon>{<ShoppingCartIcon/>
+               }</ListItemIcon>
+                    <ListItemText primary="Panier" />
                   </ListItem>
                 </Link>
 
                 <Link className="dropdownlink1" to="/MesDemandes">
                   <ListItem divider={true} button key="">
-                    {/* <ListItemIcon>{index=== 0 && 
-               }</ListItemIcon> */}
+                    <ListItemIcon>{<FolderIcon/>     
+               }</ListItemIcon>
                     <ListItemText primary="Mes Demandes" />
+                  </ListItem>
+                  
+                </Link>
+                
+                <Link className="dropdownlink1" to="/projectcreation">
+                  <ListItem divider={true} button key="">
+                    <ListItemIcon>{<BuildSharpIcon/>}</ListItemIcon>
+                    <ListItemText primary="Crée votre projet" />
                   </ListItem>
                   
                 </Link>
 
                 <Link className="dropdownlink1" onClick={this.props.logout} to="/">
                   <ListItem divider={true} button key="">
-                    {/* <ListItemIcon>{index=== 0 && 
-               }</ListItemIcon> */}
+                    <ListItemIcon>{<MeetingRoomIcon/> 
+               }</ListItemIcon>
                     <ListItemText primary="Se déconnecter" />
                   </ListItem>
                 </Link>

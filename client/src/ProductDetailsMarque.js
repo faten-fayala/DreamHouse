@@ -3,11 +3,13 @@ import { connect } from 'react-redux'
 import ProductItem from './ProductItem'
 import {getproduct} from './actions/ProductAction'
 import {  Link } from 'react-router-dom'
+import {loadUser} from './actions/AuthActions';
 
 export class ProductDetailsMarque extends Component {
 
     componentDidMount(){
         this.props.getproduct()
+        this.props.loadUser()
     }
 
     render() {
@@ -33,4 +35,4 @@ const mapStateToProps = state=>{
         products:state.ProductReducer.product
     }
 }
-export default connect(mapStateToProps,{getproduct})(ProductDetailsMarque)
+export default connect(mapStateToProps,{getproduct,loadUser})(ProductDetailsMarque)

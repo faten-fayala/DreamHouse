@@ -16,12 +16,38 @@
     text-decoration: none !important;
     color: white;
   }
+  .logo-connexion{
+   
+  
+   display: flex;
+   justify-content: space-around;
+   
+  }
+  .logo-connexion-items{
+    width:60px;
+    height:60px;
+   
+  }
+  .nous-suivre{
+      padding-bottom:20px;
+  }
+.footer-description-items-publicite{
+    font-weight: 400;
+    padding-top: 10px; 
+    color:white !important;
+    text-align: left;
+    text-decoration: none !important;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 .footer-description-items{
     font-weight: 400;
     padding-top: 10px; 
     color:white !important;
     text-align: left;
     text-decoration: none !important;
+  
+   
 }
 .footer-title{
     padding-bottom: 10px;
@@ -64,5 +90,11 @@
     list-style-type: none;
     color:black;
     
+ 
+}
+.connexion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
  
 }

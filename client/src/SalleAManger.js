@@ -3,6 +3,7 @@ import Image from "./dreamhouse.png";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import uuid from "uuid";
+import {loadUser} from './actions/AuthActions';
 
 class SalleAManger extends Component {
   constructor(props) {
@@ -65,6 +66,9 @@ class SalleAManger extends Component {
       ]
     };
   }
+  componentDidMount(){
+    this.props.loadUser()
+  }
   render() {
     return (
       <div className="creations-piece-body">
@@ -99,4 +103,4 @@ class SalleAManger extends Component {
   }
 }
 
-export default SalleAManger;
+export default connect(null,{loadUser})(SalleAManger);

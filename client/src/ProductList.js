@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import ProductItem from "./ProductItem";
 import { getproduct } from "./actions/ProductAction";
+import { Link } from "react-router-dom";
+import {loadUser} from './actions/AuthActions';
+
 class ProductList extends Component {
   constructor(props) {
     super(props);
@@ -9,6 +12,7 @@ class ProductList extends Component {
   }
   componentDidMount(){
       this.props.getproduct()
+      this.props.loadUser()
   }
   render() {
     return (<div>
@@ -16,7 +20,9 @@ class ProductList extends Component {
         {/* <h1 className="title">Products</h1> */}
         <div className="products">
           {this.props.products.map(el => (
+          
           <ProductItem product={el} />
+          
         ))}
         </div>
         
@@ -30,4 +36,4 @@ const mapStateToProps = state => {
     products: state.ProductReducer.product
   };
 };
-export default connect(mapStateToProps, { getproduct })(ProductList);
+export default connect(mapStateToProps, { getproduct , loadUser })(ProductList);

@@ -92,7 +92,13 @@ width:100%
   color:red !important;
   background-color: salmon !important;
 }
-
+.login{
+  color: #c39738;
+    line-height: 23px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none !important;
+}
 
 
 .MuiFormLabel-filled{
@@ -161,6 +167,9 @@ font-weight: bold;
   color:red !important;
 }
 .profiler{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
   padding-right:10px ;
   padding-top:5px ;
   align-items: center;

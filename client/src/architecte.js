@@ -4,6 +4,8 @@ import uuid from "uuid";
 import "./architecte.css";
 import { Button, Carousel } from "react-bootstrap";
 import SimpleRating from "./rating";
+import {loadUser} from './actions/AuthActions';
+
 const Item = ({ item: { img, alt } }) => (
   <Carousel.Item>
     <a className="thumbnail" href="javascript:void(0)">
@@ -90,6 +92,9 @@ class Architecte extends Component {
       ]
     };
   }
+  componentDidMount(){
+    this.props.loadUser()
+  }
   render() {
     return (
       <div className="list-architecte">
@@ -138,7 +143,7 @@ class Architecte extends Component {
   }
 }
 
-export default Architecte;
+export default connect(null,{loadUser})(Architecte);
 
 /*<div>
                 <div

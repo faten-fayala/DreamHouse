@@ -22,14 +22,17 @@ const PanierReducer =(state= initialState,action)=>{
             let result = allItems.filter(el => el._id !== action.payload)
             localStorage.setItem('cart', JSON.stringify(result))
             return result
-        // case GET_ORDER :
-        //     return{
-        //              state:action.payload
-        //             }
-            // case ADD_DEMAND :
-            //     return{
-            //         state:{...state, action.payload}
-            //     } 
+        case GET_ORDER :
+            return action.payload
+        case SUBMIT_ORDER :
+            return [...state, action.payload] 
+        // case ORDER_ERROR :
+        //     return[
+
+        //         ...state,
+        //         error:action.payload
+            
+        //     ]
         
         default:
             return state
